@@ -1,0 +1,35 @@
+
+.wFormContainer .wForm .actions,
+.wFormContainer .wForm form .wfPagingButtons {
+  margin-top: 0;
+}
+
+/* Buttons */
+.wFormContainer .wForm .primaryAction,
+.wFormContainer .wForm .wfPageNextButton,
+.wFormContainer .wForm .wfPagePreviousButton {
+  margin-top: 1.6em;
+  padding: 0.5em 1em;
+  background-color: $color-accent-color;
+  border-radius: .25em;
+  border: none;
+  font-weight: normal;
+  color: #fefeff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  transition: all 0.25s linear;
+}
+.wFormContainer .wForm .primaryAction:hover,
+.wFormContainer .wForm .wfPagePreviousButton:hover,
+.wFormContainer .wForm .wfPageNextButton:hover {
+  -webkit-box-shadow: 0px 0px .25em 0 rgba(0,0,0,0.4);
+  box-shadow: 0px 0px .25em 0 rgba(0,0,0,0.4);
+}
+.wFormContainer .wForm .primaryAction {
+  font-weight: bold !important;
+}
+/* Button when disabled */
+.wFormContainer input[type='submit']:disabled {
+  background-color: rgba(0,0,0,0.2);
+  color: rgba(255,255,255,0.7);
+}

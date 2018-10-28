@@ -1,0 +1,95 @@
+/** Calendar **/
+html .kalendae {
+  background: #fefefe;
+  border-radius: .25em;
+  font-size: $length-scale-size;
+  font-family: $font-font;
+}
+
+/** Month Container **/
+html .kalendae .k-calendar {
+  width: 15em;
+}
+
+html .kalendae .k-title,
+html .kalendae .k-header,
+html .kalendae .k-days {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+html .kalendae .k-header span,
+html .kalendae .k-days span {
+  width: calc(14% - 3px) !important;
+  height: inherit;
+  line-height: inherit;
+  box-sizing: border-box !important;
+  margin-left: 1px !important;
+  margin-right: 1px !important;
+  text-align:right;
+  padding: 2px .25em 2px 2px;
+}
+
+/** Kalendae.Input's popup close button **/
+html .kalendae .k-btn-close {
+  font-family:'Helvetica Neue', 'Helvetica';
+  border:2px solid rgba(0,0,0,0.5);
+  color: #383932;
+}
+html .kalendae .k-btn-close:hover {
+  color: $color-accent-color;
+  border-color: $color-accent-color;
+}
+
+/** Month Title Row **/
+html .kalendae .k-caption {
+  font-size: $length-scale-size;
+  color: $color-accent-color;
+}
+
+/** Month and Year Buttons **/
+html .kalendae .k-btn-previous-month,
+html .kalendae .k-btn-next-month,
+html .kalendae .k-btn-previous-year,
+html .kalendae .k-btn-next-year {
+  color: $color-accent-color;
+  line-height: normal;
+  height: auto;
+  font-size:1.4em;
+}
+
+html .kalendae .k-btn-previous-month:hover,
+html .kalendae .k-btn-next-month:hover,
+html .kalendae .k-btn-previous-year:hover,
+html .kalendae .k-btn-next-year:hover {color: $color-accent-color;}
+
+html .kalendae .k-header span {
+  color: #383932;
+}
+
+html .kalendae .k-days span {
+  color: #383932;
+}
+
+/** Days inside of the month view **/
+html .kalendae .k-days span.k-in-month.k-active {
+  border-color: rgba(0,0,0,.1);
+  background-color: #{$color-accent-color}77;
+  color: #fefeff;
+}
+/** Days outside of the month view (before the first day of the month, after the last day of the month) **/
+html .kalendae .k-days span.k-out-of-month {
+  color: #{#383932}99;
+}
+
+/** Selected day, when inside the selectable area **/
+html .kalendae .k-days span.k-selected.k-active {
+  background: $color-accent-color;
+  color: #fefeff;
+}
+
+/** Selectable day, hovered **/
+html .kalendae .k-days span.k-active:hover {
+  border-color: #383932;
+}

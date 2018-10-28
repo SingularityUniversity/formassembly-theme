@@ -1,0 +1,20 @@
+
+
+/* Support Info */
+.wFormContainer .supportInfo {
+  text-align: center;
+}
+.wFormContainer .supportInfo a {
+  text-decoration: none;
+  color: $color-accent-color ;
+}
+.wFormContainer .supportInfo a:hover {
+  color: $color-accent-color ;
+}
+
+/* Terms Of Service . Privacy Policy */
+.wFormContainer .branding a {
+  color: $color-accent-color;
+  font-weight: 500;
+  text-decoration: none;
+}

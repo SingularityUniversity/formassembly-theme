@@ -1,0 +1,13 @@
+/* Error Message */
+.wFormContainer .oneField.errFld input[type='text'],
+.wFormContainer .oneField.errFld input[type='password'],
+.wFormContainer .oneField.errFld textarea,
+.wFormContainer .oneField.errFld select {
+  border-color: #FF0000 !important;
+}
+.wFormContainer .oneField.errFld div.errMsg {
+  padding: 0.35em 0;
+  color: #FF0000;
+  font-weight: normal;
+  font-size: 0.8em;
+}

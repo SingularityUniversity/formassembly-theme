@@ -1,0 +1,42 @@
+
+.wFormContainer .wForm #wfTabNav {
+  padding: 0 3rem 1.6em 3rem;
+}
+
+
+/* Page Navigation */
+.wFormContainer #wfTabNav {
+  font-size: .9em;
+}
+.wFormContainer .wfTab {
+  display: inline-block;
+  background-color: #{$color-accent-color}88;
+  text-align: center;
+  width: 1.5em;
+  line-height: 1.5em;
+  border-radius: .15em;
+  color: #fefeff;
+  text-decoration: none;
+  transition: all 0.25s linear;
+  margin: 0 1px;
+
+}
+
+.wFormContainer .wfTab.wfHiddenTab, .wFormContainer .wfTab.wfHiddenTab:hover {
+  color: rgba(0,0,0,.3);
+  cursor: not-allowed;
+}
+
+.wFormContainer .wfTab.wfTabCurrentPage {
+  background-color: $color-accent-color;
+  font-weight: bold;
+}
+
+.wFormContainer .wfTab:hover {
+  background-color: $color-accent-color;
+  font-weight: bold;
+}
+
+.wFormContainer .wfTabSep {
+  display: none;
+}

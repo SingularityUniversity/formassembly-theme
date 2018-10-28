@@ -1,0 +1,25 @@
+.wFormContainer .label {
+  font-weight: 400;
+}
+
+/* Field Label */
+.wFormContainer .label.preField {
+  line-height: 1.5rem;
+}
+/* Radio Label */
+.wFormContainer .label.postField {
+  padding-left: 0.4em;
+}
+.wFormContainer .oneChoice {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+/* Label alignment */
+.wFormContainer .oneChoice .label {
+  vertical-align: middle !important;
+}
+
+/* Required Mark */
+.wFormContainer .reqMark:after {
+  color: #FF0000;
+}

@@ -1,0 +1,25 @@
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+
+  .wForm {
+    overflow: auto; /* prevents margin collapse on form title */
+
+    /* Form Title */
+    .wFormTitle {
+      padding: $form-padding;
+      margin: 1rem 0 0 0;
+      font-size: 1.75em;
+    }
+
+    /* Page Title */
+    .section.pageSection > h4 {
+      font-size: 1.2em;
+    }
+
+    /* Headings */
+    .htmlSection h4 {
+      font-size: 1.2em;
+    }
+  }
+}

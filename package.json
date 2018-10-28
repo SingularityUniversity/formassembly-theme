@@ -1,0 +1,29 @@
+{
+  "name": "formassembly-theme-dev-kit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Veer West LLC",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
+    "gulp-livereload": "^4.0.0",
+    "gulp-prompt": "^1.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "ncp": "^2.0.0",
+    "node-sass": "^4.9.4",
+    "pretty": "^2.0.0",
+    "prompts": "^1.1.1",
+    "puppeteer": "^1.9.0",
+    "request-promise": "^4.2.2",
+    "through2": "^2.0.3"
+  }
+}

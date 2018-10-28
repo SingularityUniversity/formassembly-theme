@@ -1,0 +1,16 @@
+/* Section */
+.wFormContainer fieldset {
+  border-radius: 0.15em;
+  border: solid 1px #dcddde;
+  padding: 0 1.2em 1.2em 1.2em;
+  display: block;
+  margin-top: 1.9em;
+  margin-bottom: 1.9em;
+}
+
+.wFormContainer fieldset > fieldset:last-child {
+  margin-bottom: 0;
+}
+.wFormContainer .pageSection > *:last-child {
+  margin-bottom: 0;
+}
