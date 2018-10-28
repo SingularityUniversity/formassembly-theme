@@ -13,10 +13,15 @@ const XSL_TEMPLATE_URL = 'https://app.formassembly.com/dist/final.xsl';
 const WFORMS_JS_URL = 'https://app.formassembly.com/wForms/3.11/js/wforms.js';
 const WFORMS_CSS_URL = 'https://app.formassembly.com/dist/form-builder/5.0.0/wforms-layout.css';
 const WFORMS_CSS_JSONLY_URL = 'https://app.formassembly.com/dist/form-builder/5.0.0/wforms-jsonly.css';
+const WFORMS_CALENDAR_JS_URL = 'https://app.formassembly.com/wForms/3.11/js/wforms_calendar.js';
+const KALENDAE_JS_URL = 'https://app.formassembly.com/js/kalendae/kalendae.standalone.min.js';
+const KALENDAE_CSS_URL = 'https://app.formassembly.com/css/kalendae.css';
+const WFORMS_LOCALIZATION_JS_URL = 'https://app.formassembly.com/wForms/3.11/js/localization-en_US.js';
+
 
 /* List of scripts in the /script folder used to generate the forms included in the Theme Preview page. */
 const FORM_SCRIPTS = ['test-field-types.js', 'test-label-alignment.js', 'test-multi-page.js',
-                      'test-tables.js', 'test-rtl-language.js'];
+                      'test-tables.js', 'test-field-decorators.js', 'test-rtl-language.js'];
 
 /**
  * Called from a gulp task (`gulp create`)
@@ -158,12 +163,16 @@ function generatePreviewHTML(formsHTML, themeName) {
     return `<!doctype html>
       <html>
         <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-            <script type='text/javascript' src="${WFORMS_JS_URL}"></script>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />            
             <link rel='stylesheet' href="${WFORMS_CSS_URL}" type='text/css' />
             <link rel='stylesheet' href="${WFORMS_CSS_JSONLY_URL}" type='text/css' />
             <link rel='stylesheet' href="../dist/themes/${themeName}.css" type='text/css' />
-            <script type="text/javascript">${patchWFORMS()}</script>
+            <link rel="stylesheet" type="text/css" href="${KALENDAE_CSS_URL}">
+            <script type='text/javascript' src="${WFORMS_JS_URL}"></script>
+            <script type="text/javascript" src="${KALENDAE_JS_URL}"></script>
+            <script type="text/javascript" src="${WFORMS_CALENDAR_JS_URL}"></script>
+            <script type="text/javascript" src="${WFORMS_LOCALIZATION_JS_URL}"></script>
+            <script type="text/javascript">${patchWFORMS()}</script>            
         </head>
         <body class="wFormWebPage">   
             ${allFormsHTML}            
