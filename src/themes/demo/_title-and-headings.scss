@@ -1,0 +1,27 @@
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+
+  .wForm {
+    display: flex; /* prevents margin collapse on form title */
+    flex-direction: column;
+
+    /* Form Title */
+    .wFormTitle {
+      font-family: 'Roboto Slab';
+      margin: $form-padding;
+      margin-top: 3rem;
+      font-size:1.75em;
+    }
+
+    /* Page Title */
+    .section.pageSection > h4 {
+      font-size:1.3em;
+    }
+
+    /* Headings */
+    .htmlSection h4 {
+      font-size:1.25em;
+    }
+  }
+}

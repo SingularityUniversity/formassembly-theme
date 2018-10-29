@@ -1,0 +1,75 @@
+$input-padding: .5em;
+$input-backgroud-color: #FFF;
+$input-border: 1px solid #bbb;
+$input-border-radius: .15em;
+$input-height: 2.5em;
+$input-default-width: 20em;
+$input-text-color: darken($color-text-color,50%);
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+
+  .wForm {
+
+    /* container for the input(s) and decorators */
+    .inputWrapper {
+
+      /* inputs */
+      input[type='text'],
+      input[type='password'],
+      select,
+      textarea {
+        color: $input-text-color;
+        border: $input-border;
+        border-radius: $input-border-radius;
+        box-sizing: border-box;
+        font-size: 1em;
+        width: $input-default-width;
+        background-color: $input-backgroud-color;
+      }
+
+      input[type='text'],
+      input[type='password'],
+      input[type='file'],
+      select:not([multiple]) {
+        height: $input-height;
+        padding: 0 $input-padding;
+      }
+
+      select[multiple] {
+        width: auto;
+      }
+
+      input[type='file'] {
+        border: none;
+      }
+
+      textarea {
+        height: 5em;
+        padding: $input-padding;
+      }
+      select option {
+        padding: 0.25em $input-padding;
+      }
+      input.readonly, textarea.readonly {
+        border: $input-border !important;
+        background-color: rgba($input-text-color,.05) !important;
+      }
+      /* Input with focus */
+      textarea:focus,
+      input[type='text']:focus,
+      input[type='password']:focus,
+      select:focus {
+        outline-style: none;
+        border-color: $color-accent-color;
+      }
+      /* Placeholder Text */
+      ::-webkit-input-placeholder,  /* Chrome/Opera/Safari */
+      ::-moz-placeholder, /* Firefox 19+ */
+      :-ms-input-placeholder, /* IE 10+ */
+      :-moz-placeholder { /* Firefox 18- */
+        color: rgba($input-text-color,.1);
+      }
+    }
+  }
+}

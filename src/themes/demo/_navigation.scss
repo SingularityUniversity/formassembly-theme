@@ -1,0 +1,32 @@
+
+.wFormContainer {
+
+  /* Container for the navigation bar (listing page numbers) */
+  .wForm #wfTabNav {
+    padding: $form-padding;
+  }
+
+  /* A page number in the navigation */
+  .wfTab {
+    margin: 0 .25em;
+  }
+
+  /* Page number for the current page */
+  .wfTab.wfTabCurrentPage {
+    font-weight: bold;
+  }
+
+  /* Page number for a page that is disabled (conditional) */
+  .wfTab.wfHiddenTab, .wfTab.wfHiddenTab:hover {
+    color: rgba($color-text-color,.3);
+    cursor: not-allowed;
+  }
+
+  /* Page number on mouse hover */
+  .wfTab:hover {
+  }
+
+  /* Separator between page numbers. */
+  .wfTabSep {
+  }
+}

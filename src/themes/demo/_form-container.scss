@@ -1,0 +1,27 @@
+$form-padding: 1rem 2rem;
+$form-background-color: #fff;
+$form-border: none;
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+
+  /* Container for title and form */
+  .wForm {
+    background-color: $form-background-color;
+    color: $color-text-color;
+    border: $form-border;
+    border-radius: .2rem;
+
+    /* Form */
+    form {
+      padding: $form-padding;
+    }
+  }
+}
+
+/* Optional - Apply for FormAssembly hosted forms only. */
+.wFormWebPage {
+  background-color: $color-page-background;
+}
+
+

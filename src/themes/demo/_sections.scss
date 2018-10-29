@@ -1,0 +1,13 @@
+/* Section */
+.wFormContainer {
+
+  fieldset {
+  }
+
+  fieldset > fieldset:last-child {
+    margin-bottom: 0;
+  }
+  .pageSection > *:last-child {
+    margin-bottom: 0;
+  }
+}

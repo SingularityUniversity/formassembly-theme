@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
+
+$font-font: 'Roboto Condensed';
+$length-scale-size: 95%;
+
+.wFormContainer {
+  font-family: $font-font, sans-serif;
+  font-size: $length-scale-size;
+
+  a {
+    text-decoration: none;
+    color: $color-link-color;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: $color-link-color ;
+  }
+}
+

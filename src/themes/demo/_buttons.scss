@@ -1,0 +1,48 @@
+
+@mixin button {
+  background-color: $color-accent-color;
+  color: $color-inverse-accent-color;
+  margin-top: 1.6em;
+  padding: 0.5em 1em;
+  border-radius: .25em;
+  border: none;
+  font-size:1.2em
+}
+
+.wFormContainer {
+
+  /* Container for the submit button */
+  .actions {
+    margin-top:0; /* required to preserve alignment of previous/next and submit buttons. */
+
+    /* Submit button */
+    .primaryAction {
+      @include button;
+      font-weight: bold;
+    }
+    /* Hover state */
+    .primaryAction:hover {
+      background-color: lighten($color-accent-color, 10%);
+    }
+    /* Disabled state (submission in progress) */
+    .primaryAction:disabled {
+      background-color: rgba(0,0,0,0.2);
+      color: rgba(255,255,255,0.7);
+    }
+  }
+
+  /* Container for the page next/previous buttons */
+  .wfPagingButtons {
+    margin-top: 0;
+
+    /* Page next/previous buttons */
+    .wfPageNextButton, .wfPagePreviousButton {
+      @include button;
+    }
+
+    /* Hover state */
+    .wfPageNextButton:hover, .wfPagePreviousButton:hover {
+      background-color: lighten($color-accent-color, 10%);
+    }
+  }
+}
