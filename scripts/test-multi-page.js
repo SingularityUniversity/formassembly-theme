@@ -12,8 +12,13 @@ class PreviewForm extends TestForm {
         page1.append(new Field())
             .setLabel(this.loremIpsum(4,6));
 
+        let field = page1.append(new Field())
+            .setType('checkbox');
+        let choice = field.addChoice('Activate Page 2 (skip to page 3 when not checked)');
+
         let page2 = this.append(new Section().setType('page'))
-            .setLabel('Second Page');
+            .setLabel('Second Page')
+            .setCondition('`#'+choice.getId()+'`');
 
         page2.append(new Field())
             .setLabel(this.loremIpsum(4,6));
@@ -22,6 +27,12 @@ class PreviewForm extends TestForm {
             .setLabel('Third Page');
 
         page3.append(new Field())
+            .setLabel(this.loremIpsum(4,6));
+
+        let page4 = this.append(new Section().setType('page'))
+            .setLabel('Fourth Page');
+
+        page4.append(new Field())
             .setLabel(this.loremIpsum(4,6));
 
     }

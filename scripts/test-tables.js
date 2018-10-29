@@ -60,5 +60,15 @@ class PreviewForm extends TestForm {
             .setInputSize('6em')
             .setLabel('Third Column');
 
+        section = this.append(new Section())
+            .setLabel('2 column section')
+            .setLayout('column')
+            .setColumnCount(2);
+
+        section.append(new HTML())
+            .setContent(this.loremIpsum(10));
+        section.append(new HTML())
+            .setContent(this.loremIpsum(10));
+
     }
 }

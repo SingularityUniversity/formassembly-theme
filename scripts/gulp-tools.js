@@ -20,8 +20,9 @@ const WFORMS_LOCALIZATION_JS_URL = 'https://app.formassembly.com/wForms/3.11/js/
 
 
 /* List of scripts in the /script folder used to generate the forms included in the Theme Preview page. */
-const FORM_SCRIPTS = ['test-field-types.js', 'test-label-alignment.js', 'test-multi-page.js',
-                      'test-tables.js', 'test-field-decorators.js', 'test-rtl-language.js'];
+const FORM_SCRIPTS = ['test-field-types.js', 'test-fieldsets.js', 'test-label-alignment.js', 'test-multi-page.js',
+                      'test-conditionals.js', 'test-repeats.js', 'test-tables.js', 'test-field-decorators.js',
+                      'test-errors.js', 'test-text-formatting.js', 'test-rtl-language.js'];
 
 /**
  * Called from a gulp task (`gulp create`)

@@ -31,6 +31,6 @@ class HTMLRenderer {
 
     serialize() {
         const serializer = new XMLSerializer();
-        return serializer.serializeToString(this.fragment);
+        return serializer.serializeToString(this.fragment).replace(/&amp;/g, '&');
     }
 }

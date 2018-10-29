@@ -42,7 +42,7 @@ class TestForm extends Form {
         if(max===null) max = min;
         const count = Math.floor(Math.random() * (max + 1 - min)) + min;
         return TestForm.shuffle(lorem.trim().replace(/\s+/g,' ').split('.')).join('.')
-            .split(' ').slice(0,count + 1).join(' ');
+            .split(' ').slice(0,count + 1).join(' ').trim();
     }
 
     hebrewIpsum(min= 4, max = null) {
@@ -60,7 +60,7 @@ class TestForm extends Form {
         if(max===null) max = min;
         const count = Math.floor(Math.random() * (max + 1 - min)) + min;
         return TestForm.shuffle(lorem.trim().replace(/\s+/g,' ').split('.')).join('.')
-            .split(' ').slice(0,count + 1).join(' ');
+            .split(' ').slice(0,count + 1).join(' ').trim();
     }
 
     randomColors(count) {
