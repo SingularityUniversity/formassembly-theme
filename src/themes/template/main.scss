@@ -5,6 +5,7 @@
 @import "title-and-headings";
 @import "navigation";
 @import "sections";
+@import "tables";
 @import "labels";
 @import "inputs";
 @import "hints";
@@ -13,38 +14,6 @@
 @import "errors";
 @import 'buttons';
 @import 'footer';
-
-
-/* leftovers */
-
-.wFormContainer .reviewHeader,
-.wFormContainer .reviewResponse {
-  padding: 1.2em 2.4em;
-  background-color: #fff;
-}
-.wFormContainer .reviewFooter.wForm {
-  margin-top: 1.2em;
-  padding-top: 2.4em;
-}
-.wFormContainer .wFormThankYou {
-  padding: 3.6em;
-}
-
-
-/* ESignature Title */
-.wFormContainer .reviewFooter h4 {
-  margin: 1.2em 0;
-}
-
-/* Form name on save confirmation page */
-.wFormContainer#wFormSavedPage h3 {
-  padding: 2.4em 0 0 0;
-}
-
-
-.wFormContainer #wFormsSavedMessage {
-  border: none;
-}
 
 
 

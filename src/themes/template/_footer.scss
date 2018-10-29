@@ -1,20 +1,18 @@
 
+/* Footer */
+.wFormContainer {
 
-/* Support Info */
-.wFormContainer .supportInfo {
-  text-align: center;
-}
-.wFormContainer .supportInfo a {
-  text-decoration: none;
-  color: $color-accent-color ;
-}
-.wFormContainer .supportInfo a:hover {
-  color: $color-accent-color ;
-}
+  .wFormFooter {
 
-/* Terms Of Service . Privacy Policy */
-.wFormContainer .branding a {
-  color: $color-accent-color;
-  font-weight: 500;
-  text-decoration: none;
+    /* Assistance link */
+    .supportInfo {
+      text-align: center;
+      a {
+        color: $color-link-color;
+      }
+      a:hover {
+        color: $color-link-color;
+      }
+    }
+  }
 }

@@ -1,42 +1,32 @@
 
-.wFormContainer .wForm #wfTabNav {
-  padding: 0 3rem 1.6em 3rem;
-}
+.wFormContainer {
 
+  /* Container for the navigation bar (listing page numbers) */
+  .wForm #wfTabNav {
+    padding: $form-padding;
+  }
 
-/* Page Navigation */
-.wFormContainer #wfTabNav {
-  font-size: .9em;
-}
-.wFormContainer .wfTab {
-  display: inline-block;
-  background-color: #{$color-accent-color}88;
-  text-align: center;
-  width: 1.5em;
-  line-height: 1.5em;
-  border-radius: .15em;
-  color: #fefeff;
-  text-decoration: none;
-  transition: all 0.25s linear;
-  margin: 0 1px;
+  /* A page number in the navigation */
+  .wfTab {
+    margin: 0 .25em;
+  }
 
-}
+  /* Page number for the current page */
+  .wfTab.wfTabCurrentPage {
+    font-weight: bold;
+  }
 
-.wFormContainer .wfTab.wfHiddenTab, .wFormContainer .wfTab.wfHiddenTab:hover {
-  color: rgba(0,0,0,.3);
-  cursor: not-allowed;
-}
+  /* Page number for a page that is disabled (conditional) */
+  .wfTab.wfHiddenTab, .wfTab.wfHiddenTab:hover {
+    color: rgba($color-text-color,.3);
+    cursor: not-allowed;
+  }
 
-.wFormContainer .wfTab.wfTabCurrentPage {
-  background-color: $color-accent-color;
-  font-weight: bold;
-}
+  /* Page number on mouse hover */
+  .wfTab:hover {
+  }
 
-.wFormContainer .wfTab:hover {
-  background-color: $color-accent-color;
-  font-weight: bold;
-}
-
-.wFormContainer .wfTabSep {
-  display: none;
+  /* Separator between page numbers. */
+  .wfTabSep {
+  }
 }

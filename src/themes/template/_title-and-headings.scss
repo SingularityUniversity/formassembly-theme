@@ -3,23 +3,23 @@
 .wFormContainer {
 
   .wForm {
-    overflow: auto; /* prevents margin collapse on form title */
+    display: flex; /* prevents margin collapse on form title */
+    flex-direction: column;
 
     /* Form Title */
     .wFormTitle {
-      padding: $form-padding;
-      margin: 1rem 0 0 0;
-      font-size: 1.75em;
+      margin: $form-padding;
+      margin-top: 3em;
     }
 
     /* Page Title */
     .section.pageSection > h4 {
-      font-size: 1.2em;
+
     }
 
     /* Headings */
     .htmlSection h4 {
-      font-size: 1.2em;
+
     }
   }
 }

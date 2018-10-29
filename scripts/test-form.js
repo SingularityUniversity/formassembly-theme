@@ -6,7 +6,11 @@ class TestForm extends Form {
         super();
         this.setBuilderVersion(BUILDER_VERSION)
             .setDefaultLabelPlacement('labelsAbove')
-            .setDefaultHintPlacement('hintsTooltip');
+            .setDefaultHintPlacement('hintsTooltip')
+            .setContactLinkLabel('Assistance Link')
+            .setShowContactLink(true)
+            .setGDPRLinkLabel('GDPR Privacy Link')
+            .setShowGDPRLink(true);
     }
 
     /* Patch Form API 5.0.0  - to be added on app.formassembly.com */

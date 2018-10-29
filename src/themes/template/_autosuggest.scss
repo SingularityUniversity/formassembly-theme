@@ -1,6 +1,16 @@
-.wFormContainer .wfAutosuggest.tt-hint {
-  margin-top: 0;
-}
-.wFormContainer .wForm .tt-spinner {
-  top: 0.6rem;
+.wFormContainer {
+  /* The auto-completion suggestion.
+   * Shown underneath the text input.
+   * Must match exactly the position of user input
+   */
+  .wfAutosuggest.tt-hint {
+    margin-top: 0;
+  }
+  /* The spinner indicating the query is in progress.
+   * Positioned inside the text input.
+   */
+  .tt-spinner {
+    top: 0.6rem;
+    right: 0.25rem;
+  }
 }

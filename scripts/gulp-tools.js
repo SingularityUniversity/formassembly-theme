@@ -156,8 +156,7 @@ function generatePreviewHTML(formsHTML, themeName) {
     const allFormsHTML = formsHTML.map(html => `
         <div class="wFormContainer">
             <div class="wFormHeader"></div>
-            ${html}
-            <div class="wFormFooter"><p class="supportInfo"><a href="#">Assistance Link</a></p></div>
+            ${html}            
          </div>
     `).join("\n");
 

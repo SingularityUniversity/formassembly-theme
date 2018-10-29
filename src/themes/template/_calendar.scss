@@ -1,95 +1,102 @@
-/** Calendar **/
-html .kalendae {
-  background: #fefefe;
-  border-radius: .25em;
-  font-size: $length-scale-size;
-  font-family: $font-font;
-}
+$calendar-background-color: #f2f2f2;
+$calendar-text-color: $color-text-color;
+$calendar-accent-color: $color-accent-color;
+$calendar-inverse-accent-color: $color-inverse-accent-color;
 
-/** Month Container **/
-html .kalendae .k-calendar {
-  width: 15em;
-}
+/** Calendar - popup is inserted outside of the .wFormContainer **/
+html {
 
-html .kalendae .k-title,
-html .kalendae .k-header,
-html .kalendae .k-days {
-  width: 100%;
-  height: auto;
-  margin: 0;
-}
+  /* Calendar container */
+  .kalendae {
+    background: $calendar-background-color;
+    font-size: $length-scale-size;
+    font-family: $font-font;
+    border-radius: 0;
+    padding: 1rem;
 
-html .kalendae .k-header span,
-html .kalendae .k-days span {
-  width: calc(14% - 3px) !important;
-  height: inherit;
-  line-height: inherit;
-  box-sizing: border-box !important;
-  margin-left: 1px !important;
-  margin-right: 1px !important;
-  text-align:right;
-  padding: 2px .25em 2px 2px;
-}
+    /** Container for the 1-month view **/
+    .k-calendar {
 
-/** Kalendae.Input's popup close button **/
-html .kalendae .k-btn-close {
-  font-family:'Helvetica Neue', 'Helvetica';
-  border:2px solid rgba(0,0,0,0.5);
-  color: #383932;
-}
-html .kalendae .k-btn-close:hover {
-  color: $color-accent-color;
-  border-color: $color-accent-color;
-}
+      /* ensures proper alignment of the 7 days */
+      width: 14em; /* divisible by 7 */
+      .k-header span, .k-days span {
+        /* 1/7th of the width, minus margin. */
+        width: calc(2em - 2px) !important;
+        /* margin */
+        margin-left: 1px !important;
+        margin-right: 1px !important;
+        /* ensure any border or padding is accounted for. */
+        box-sizing: border-box !important;
+      }
 
-/** Month Title Row **/
-html .kalendae .k-caption {
-  font-size: $length-scale-size;
-  color: $color-accent-color;
-}
+      .k-title, .k-header, .k-days {
+        width: 100%;
+        height: auto;
+        margin: 0;
+      }
+      .k-header span,
+      .k-days span {
+        height: inherit;
+        line-height: inherit;
+        text-align: right;
+        padding: 2px .25em 2px 2px;
 
-/** Month and Year Buttons **/
-html .kalendae .k-btn-previous-month,
-html .kalendae .k-btn-next-month,
-html .kalendae .k-btn-previous-year,
-html .kalendae .k-btn-next-year {
-  color: $color-accent-color;
-  line-height: normal;
-  height: auto;
-  font-size:1.4em;
-}
+      }
+      /** Kalendae.Input's popup close button **/
+      .k-btn-close {
 
-html .kalendae .k-btn-previous-month:hover,
-html .kalendae .k-btn-next-month:hover,
-html .kalendae .k-btn-previous-year:hover,
-html .kalendae .k-btn-next-year:hover {color: $color-accent-color;}
+      }
+      .k-btn-close:hover {
+        color: $calendar-accent-color;
+        border-color: $calendar-accent-color;
+      }
+      /** Month Title Row **/
+      .k-caption {
+        font-size: $length-scale-size;
+        color: $calendar-accent-color;
+      }
+      /** Month and Year Buttons **/
+      .k-btn-previous-month,
+      .k-btn-next-month,
+      .k-btn-previous-year,
+      .k-btn-next-year {
+        color: $calendar-accent-color;
+        line-height: normal;
+        height: auto;
+        font-size: 1.4em;
+      }
 
-html .kalendae .k-header span {
-  color: #383932;
-}
+      .k-btn-previous-month:hover,
+      .k-btn-next-month:hover,
+      .k-btn-previous-year:hover,
+      .k-btn-next-year:hover {
+        color: $calendar-accent-color;
+      }
 
-html .kalendae .k-days span {
-  color: #383932;
-}
+      .k-header span {
+        color: $calendar-accent-color;
+      }
 
-/** Days inside of the month view **/
-html .kalendae .k-days span.k-in-month.k-active {
-  border-color: rgba(0,0,0,.1);
-  background-color: #{$color-accent-color}77;
-  color: #fefeff;
-}
-/** Days outside of the month view (before the first day of the month, after the last day of the month) **/
-html .kalendae .k-days span.k-out-of-month {
-  color: #{#383932}99;
-}
+      /** Days in the current month **/
+      .k-days span.k-in-month.k-active {
+        color: $calendar-text-color;
+        border-color: rgba($calendar-accent-color,.1);
+        background-color: rgba($calendar-accent-color, .08);
+      }
+      /* Days outside of the current month */
+      .k-days span.k-out-of-month {
+        color: rgba($calendar-text-color, .3);
+      }
 
-/** Selected day, when inside the selectable area **/
-html .kalendae .k-days span.k-selected.k-active {
-  background: $color-accent-color;
-  color: #fefeff;
-}
-
-/** Selectable day, hovered **/
-html .kalendae .k-days span.k-active:hover {
-  border-color: #383932;
+      /** Selected day, when inside the selectable area **/
+      .k-days span.k-selected.k-active {
+        background: $calendar-accent-color;
+        color: $calendar-inverse-accent-color;
+      }
+      /** Selectable day, hovered **/
+      .k-days span.k-active:hover {
+        border-color: $calendar-accent-color;
+      }
+    }
+  }
 }

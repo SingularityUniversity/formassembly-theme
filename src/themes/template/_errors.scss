@@ -1,13 +1,19 @@
-/* Error Message */
-.wFormContainer .oneField.errFld input[type='text'],
-.wFormContainer .oneField.errFld input[type='password'],
-.wFormContainer .oneField.errFld textarea,
-.wFormContainer .oneField.errFld select {
-  border-color: #FF0000 !important;
-}
-.wFormContainer .oneField.errFld div.errMsg {
-  padding: 0.35em 0;
-  color: #FF0000;
-  font-weight: normal;
-  font-size: 0.8em;
+
+.wFormContainer {
+  /* Indicator for an error on a field */
+  .oneField.errFld {
+    .inputWrapper {
+      /* Input with error */
+      input[type='text'],
+      input[type='password'],
+      textarea,
+      select {
+        border-color: $color-error-color;
+      }
+    }
+    /* Error message, below input */
+    div.errMsg {
+      color: $color-error-color;
+    }
+  }
 }

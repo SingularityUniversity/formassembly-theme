@@ -1,25 +1,25 @@
-.wFormContainer .label {
-  font-weight: 400;
-}
+.wFormContainer {
 
-/* Field Label */
-.wFormContainer .label.preField {
-  line-height: 1.5rem;
-}
-/* Radio Label */
-.wFormContainer .label.postField {
-  padding-left: 0.4em;
-}
-.wFormContainer .oneChoice {
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-}
-/* Label alignment */
-.wFormContainer .oneChoice .label {
-  vertical-align: middle !important;
-}
+  .label {
+    font-weight: 400;
+  }
+  /* Field Label */
+  .label.preField {
+    line-height: 1.5rem;
+  }
 
-/* Required Mark */
-.wFormContainer .reqMark:after {
-  color: #FF0000;
+  /* Container for radio/checkbox and its label */
+  .oneChoice {
+
+    /* Radio & Checkbox Label */
+    .label.postField {
+      padding-left: 0.4em;
+      vertical-align: middle !important;
+    }
+  }
+
+  /* Required Mark */
+  .reqMark:after {
+    color: $color-error-color;
+  }
 }

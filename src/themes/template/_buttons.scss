@@ -1,35 +1,45 @@
 
-.wFormContainer .wForm .actions,
-.wFormContainer .wForm form .wfPagingButtons {
-  margin-top: 0;
-}
-
-/* Buttons */
-.wFormContainer .wForm .primaryAction,
-.wFormContainer .wForm .wfPageNextButton,
-.wFormContainer .wForm .wfPagePreviousButton {
+@mixin button {
+  background-color: $color-accent-color;
+  color: $color-inverse-accent-color;
   margin-top: 1.6em;
   padding: 0.5em 1em;
-  background-color: $color-accent-color;
   border-radius: .25em;
-  border: none;
-  font-weight: normal;
-  color: #fefeff;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  transition: all 0.25s linear;
 }
-.wFormContainer .wForm .primaryAction:hover,
-.wFormContainer .wForm .wfPagePreviousButton:hover,
-.wFormContainer .wForm .wfPageNextButton:hover {
-  -webkit-box-shadow: 0px 0px .25em 0 rgba(0,0,0,0.4);
-  box-shadow: 0px 0px .25em 0 rgba(0,0,0,0.4);
-}
-.wFormContainer .wForm .primaryAction {
-  font-weight: bold !important;
-}
-/* Button when disabled */
-.wFormContainer input[type='submit']:disabled {
-  background-color: rgba(0,0,0,0.2);
-  color: rgba(255,255,255,0.7);
+
+.wFormContainer {
+
+  /* Container for the submit button */
+  .actions {
+    margin-top:0; /* required to preserve alignment of previous/next and submit buttons. */
+
+    /* Submit button */
+    .primaryAction {
+      @include button;
+    }
+    /* Hover state */
+    .primaryAction:hover {
+      background-color: saturate($color-accent-color, 20%);
+    }
+    /* Disabled state (submission in progress) */
+    .primaryAction:disabled {
+      background-color: rgba(0,0,0,0.2);
+      color: rgba(255,255,255,0.7);
+    }
+  }
+
+  /* Container for the page next/previous buttons */
+  .wfPagingButtons {
+    margin-top: 0;
+
+    /* Page next/previous buttons */
+    .wfPageNextButton, .wfPagePreviousButton {
+      @include button;
+    }
+
+    /* Hover state */
+    .wfPageNextButton:hover, .wfPagePreviousButton:hover {
+      background-color: saturate($color-accent-color, 20%);
+    }
+  }
 }
