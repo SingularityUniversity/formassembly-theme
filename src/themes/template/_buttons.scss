@@ -19,7 +19,7 @@
     }
     /* Hover state */
     .primaryAction:hover {
-      background-color: saturate($color-accent-color, 20%);
+      background-color: lighten($color-accent-color, 10%);
     }
     /* Disabled state (submission in progress) */
     .primaryAction:disabled {
@@ -39,7 +39,7 @@
 
     /* Hover state */
     .wfPageNextButton:hover, .wfPagePreviousButton:hover {
-      background-color: saturate($color-accent-color, 20%);
+      background-color: lighten($color-accent-color, 10%);
     }
   }
 }

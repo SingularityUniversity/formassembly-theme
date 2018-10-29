@@ -1,5 +1,6 @@
 $form-padding: 1rem 2rem;
-$form-background-color: #fff;
+$form-background-color: transparent;
+$form-border: 1px solid #bbb;
 
 /* Main container. Must wrap *all* theme CSS */
 .wFormContainer {
@@ -8,6 +9,7 @@ $form-background-color: #fff;
   .wForm {
     background-color: $form-background-color;
     color: $color-text-color;
+    border: $form-border;
 
     /* Form */
     form {
