@@ -95,18 +95,13 @@ class PreviewForm extends TestForm {
             .setInputMaxLengthUnit('characters');
 
         this.append(new HTML().setContent('<h4>Input with Calendar</h4>'));
-
-        section = this.append(new Section())
-            .setType('div')
-            .setLayout('column')
-            .setColumnCount(2);
-
-        section.append( new Field() )
+        
+        this.append( new Field() )
             .setInputSize('10em')
             .setLabel('Pop-up calendar <em>(focus to show)</em>')
             .setValidation('validate-datecal');
 
-        section.append(new HTML().setContent('<p>Calendar Preview:</p><div class="auto-kal" data-kal="selected: \'2/5/2018\'"></div>'));
+        this.append(new HTML().setContent('<p>Calendar Preview:</p><div class="auto-kal" data-kal="selected: \'2/5/2018\'"></div>'));
 
     }
 }

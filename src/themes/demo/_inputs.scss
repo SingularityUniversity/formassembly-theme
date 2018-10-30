@@ -1,10 +1,11 @@
 $input-padding: .5em;
-$input-backgroud-color: #FFF;
+$input-background-color: #FFF;
 $input-border: 1px solid #bbb;
 $input-border-radius: .15em;
 $input-height: 2.5em;
 $input-default-width: 20em;
 $input-text-color: darken($color-text-color,50%);
+$input-selected-color: $color-accent-color;
 
 /* Main container. Must wrap *all* theme CSS */
 .wFormContainer {
@@ -25,7 +26,7 @@ $input-text-color: darken($color-text-color,50%);
         box-sizing: border-box;
         font-size: 1em;
         width: $input-default-width;
-        background-color: $input-backgroud-color;
+        background-color: $input-background-color;
       }
 
       input[type='text'],
@@ -70,6 +71,68 @@ $input-text-color: darken($color-text-color,50%);
       :-moz-placeholder { /* Firefox 18- */
         color: rgba($input-text-color,.1);
       }
+
+      /* Faux-checkbox / radios */
+
+      @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+      .oneChoice .input-checkbox-faux:before {
+        content: '';
+        margin-right: .5em;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        vertical-align: top;
+        border-radius: 2px; /* square shape */
+        text-align: center;
+        background-color: rgba($input-selected-color,.25);
+      }
+
+      .oneChoice .input-radio-faux:before {
+        content: '\f111';
+        font-family:'fontawesome';
+        margin-right: .5em;
+        color: rgba($input-selected-color,.25);
+      }
+
+       input[type="radio"]:checked+.label > .input-radio-faux::before {
+        font-family:'fontawesome';
+        content: "\f192";
+        font-weight:900;
+        background-color: transparent;
+        color: $input-selected-color;
+      }
+       input[type="checkbox"]:checked+.label > .input-checkbox-faux::before {
+        font-family:'fontawesome';
+        content: "\f00c";
+        color: $input-selected-color;
+      }
+
+      .oneChoice input[type="checkbox"],
+      .oneChoice input[type='radio'] {
+        width: 1px;
+        height: 1px;
+        border: 0;
+        clip: rect(0 0 0 0);
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+      }
+      .oneChoice .label {
+        margin-left: 0;
+      }
+      .input-radio-faux:before,
+      .input-checkbox-faux:before {
+        transition: all 0.5s ease-out;
+      }
+    }
+  }
+  /* LTR support */
+  .wForm[dir='rtl'] {
+    .oneChoice .input-checkbox-faux:before,
+    .oneChoice .input-radio-faux:before {
+      margin-left: .5em !important;
+      margin-right: 0 !important;
     }
   }
 }
