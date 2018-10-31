@@ -23,6 +23,8 @@ Make sure you have both Git and Node installed.
 
 ## Work on your Theme
 
+### Create a theme
+
 Create your first theme by running `gulp create` from the command line.
 ```text
 gulp create

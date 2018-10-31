@@ -1,7 +1,7 @@
 # FormAssembly Theme Creation Guidelines
 
 
-### Theme Customization
+## Theme Customization
 
 Form creators in FormAssembly can apply a theme to their forms but typically do not have direct access to the SCSS to 
 make changes. Instead, they have access to simple controls (like a color picker) to modify aspects of the theme that the 
@@ -34,7 +34,7 @@ For instance, to make the Theme's **accent color** customizable,
 When making color a customization option, keep in mind how other colors  different elements with different colors may also need to 
  be customizable, or need to be derived from the customizable color in order to keep an harmonious color scheme.
 
-#### Naming Customization Options
+### Naming Customization Options
 
 To make it easier for users to understand customization options across different themes, you're encouraged to name your
 customization variables according to the following table.
@@ -55,7 +55,7 @@ customization variables according to the following table.
 | $length-logo-size | Logo size (in rem)
 | $length-scale-size | Base font-size (in rem or %)
 
-### Sizes & Scalability
+## Sizes & Scalability
 
 1. **Set your base font-size on the top-level container, as a variable.**
 2. **Use relative units (EM or %) elsewhere.**
@@ -78,7 +78,7 @@ $length-scale-size: 1rem;
 }
 ```
 
-### Selectors
+## Selectors
 1. **Use selectors provided by the template when possible.**
 2. **Use `.wFormContainer` to scope your css rules.**
 
