@@ -1,26 +1,13 @@
 'use strict';
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
-var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 var tools = require('./scripts/gulp-tools');
 var prompts = require('prompts');
-sass.compiler = require('node-sass');
-
 
 gulp.task('scss', function () {
-    return gulp.src('./src/themes/**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(sourcemaps.write())
-        .pipe(rename(function (dpath) {
-            // use folder name in /src/themes as theme name.
-            dpath.basename = dpath.dirname;
-            dpath.dirname = '';
-        }))
-        .pipe(gulp.dest('./dist/themes'))
+    return tools.compile( gulp.src('./src/themes/**/*.scss') )
         .pipe(livereload());
 });
 
@@ -51,10 +38,12 @@ gulp.task('create', async function() {
         message: 'Choose a name for your theme:'
     });
     tools.create(theme.name);
+    console.log('Done. Your work folder is in src/'+theme.name
+        + '. Your theme preview page is preview/'+theme.name+'.html. You can run `gulp watch` now.');
 });
 
 gulp.task('refresh', function() {
     tools.refresh();
 });
 
-gulp.task('default',['scss','bundlescss']);
+gulp.task('default',['scss','bundle']);

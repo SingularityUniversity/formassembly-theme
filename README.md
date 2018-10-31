@@ -14,6 +14,7 @@ Make sure you have both Git and Node installed.
 git clone https://github.com/veerwest/formassembly-theme-dev-kit
 cd formassembly-theme-dev-kit
 npm install
+npm install -g gulp-cli
 ```
 2. Create a branch. Please name your branch after yourself, using your own name, alias or handle (no space allowed).
  ```text
@@ -57,7 +58,7 @@ _calendar.scss
  Anything outside of your /src/themes folder does not need 
 to and should not be modified.
 
-You may edit the scss files with your favorite editor.
+You may edit the scss files with your favorite editor. 
 
 #### Preview your Theme
 

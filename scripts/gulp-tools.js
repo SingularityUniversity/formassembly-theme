@@ -6,6 +6,11 @@ const path = require('path');
 const through = require('through2');
 const rp = require('request-promise');
 const pretty = require('pretty');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const rename = require('gulp-rename');
+sass.compiler = require('node-sass');
 
 /* FormAssembly resources needed to create the Theme Preview page */
 const FORM_API_URL = 'https://app.formassembly.com/dist/form-builder/5.0.0/api.js';
@@ -23,6 +28,22 @@ const WFORMS_LOCALIZATION_JS_URL = 'https://app.formassembly.com/wForms/3.11/js/
 const FORM_SCRIPTS = ['test-field-types.js', 'test-fieldsets.js', 'test-label-alignment.js', 'test-multi-page.js',
                       'test-conditionals.js', 'test-repeats.js', 'test-tables.js', 'test-field-decorators.js',
                       'test-errors.js', 'test-text-formatting.js', 'test-rtl-language.js'];
+
+/**
+ * Called from a gulp task (`gulp create`)
+ */
+function compile(stream){
+    return stream.pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write())
+        .pipe(rename(function (dpath) {
+            console.log(dpath);
+            // use folder name in /src/themes as theme name.
+            dpath.basename = dpath.dirname;
+            dpath.dirname = '';
+        }))
+        .pipe(gulp.dest('./dist/themes'));
+}
 
 /**
  * Called from a gulp task (`gulp create`)
@@ -59,6 +80,7 @@ function createSourceFiles(themeName) {
         if (err) {
             return console.error(err);
         }
+        compile(gulp.src('./src/themes/**/main.scss'));
     });
 }
 /**
@@ -243,6 +265,7 @@ function bundle() {
 }
 
 module.exports = {
+    'compile': compile,
     'create'  : create,
     'refresh' : refresh,
     'bundle' : bundle
