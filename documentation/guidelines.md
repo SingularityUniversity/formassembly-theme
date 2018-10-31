@@ -1,7 +1,6 @@
 # FormAssembly Theme Creation Guidelines
 
 
-
 ### Theme Customization
 
 Form creators in FormAssembly can apply a theme to their forms but typically do not have direct access to the SCSS to 

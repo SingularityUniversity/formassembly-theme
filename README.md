@@ -10,18 +10,20 @@ Make sure you have both Git and Node installed.
 ### Setup
 
 1. In the command line, run the following commands to checkout the Theme Development Kit and install dependencies.    
-```text
-git clone https://github.com/veerwest/formassembly-theme-dev-kit
-cd formassembly-theme-dev-kit
-npm install
-npm install -g gulp-cli
-```
+   ```text
+   git clone https://github.com/veerwest/formassembly-theme-dev-kit
+   cd formassembly-theme-dev-kit
+   npm install
+   npm install -g gulp-cli
+   ```
 2. Create a branch. Please name your branch after yourself, using your own name, alias or handle (no space allowed).
- ```text
-git branch YOUR_NAME
-```
+   ```text
+   git branch YOUR_NAME
+   ```
 
-3. Create your first theme by running `gulp create` from the command line.
+## Work on your Theme
+
+Create your first theme by running `gulp create` from the command line.
 ```text
 gulp create
 ```
@@ -33,13 +35,14 @@ When prompted, enter a name for your new theme.
 ```
 Theme names cannot have space or non-alphanumeric characters in them.
 
-### Work on your Theme
+Once you're ready to work on the theme, run `gulp watch` from the command line. Leave the command running while 
+you're working on the theme to ensure that the build files are correctly updated. 
 
-From the command line, run `gulp watch`. Leave the command running while you're working on the theme to ensure that the 
-build files are correctly updated. 
 ```text
 gulp watch
 ```
+
+You should run `gulp watch` anytime you're resuming work on a theme.
 
 #### Edit your Theme Files
 
@@ -88,12 +91,12 @@ git add -A && git commit -m && git push
 
 Open a Pull Request on gitlab. https://help.github.com/articles/creating-a-pull-request/
 
-### Create Additional Themes
+## Create Additional Themes
 
 Run `gulp create` any time you want to work on a new theme. 
 **Caution**, if you choose the name of an existing theme, it will get overwritten.
 
-### Update the Theme Dev Kit
+## Update the Theme Dev Kit
 
 From time to time, FormAssembly may update the dev kit to account for new features and improvements to Themes. To bring 
 your local copy of the Theme Dev Kit up to date, stop your `gulp watch` command (if running) then run:
