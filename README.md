@@ -60,6 +60,11 @@ to and should not be modified.
 
 You may edit the scss files with your favorite editor. 
 
+#### Theme Documentation 
+
+See [Documentation](./documentation/guidelines.md)
+
+
 #### Preview your Theme
 
 To preview your theme as you edit the scss files, open /preview/THEME_NAME.html in your browser. As long as the 
