@@ -1,19 +1,22 @@
 /* Hints */
-.wFormContainer .field-hint-inactive,
-.wFormContainer .field-hint {
-  line-height: 100%;
-  font-size: 1em;
-}
-.wFormContainer .field-hint-inactive .hint {
-  font-size: 0.75em;
-  line-height: 1.75em;
-  transition: all 0.25s linear;
-}
-.wFormContainer .field-hint .hint {
-  font-size: 0.75em;
-  line-height: 1.75em;
-  transition: all 0.25s linear;
-}
-.wFormContainer .lengthIndicator {
-  font-size: 0.75em;
+.wFormContainer {
+
+  .field-hint-inactive,
+  .field-hint {
+    line-height: 100%;
+    font-size: 1em;
+  }
+  .field-hint-inactive .hint {
+    font-size: 0.75em;
+    line-height: 1.75em;
+    transition: all 0.25s linear;
+  }
+  .field-hint .hint {
+    font-size: 0.75em;
+    line-height: 1.75em;
+    transition: all 0.25s linear;
+  }
+  .lengthIndicator {
+    font-size: 0.75em;
+  }
 }

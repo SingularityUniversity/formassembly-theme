@@ -26,7 +26,7 @@ gulp.task('bundle', function() {
 
 gulp.task('watch', function () {
     livereload.listen();
-    gulp.watch('./src/themes/**/*.scss', ['scss']);
+    gulp.watch('./src/themes/**/*.scss', ['scss','bundle']);
 });
 
 /* */

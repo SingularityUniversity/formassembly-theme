@@ -4,7 +4,8 @@ class PreviewForm extends TestForm {
         super();
         this.setId('tfa_100'); // prevent ID collision with other forms on the same preview page.
         this.setTitle("Theme Dev Kit - <em>Field Types</em>");
-
+        this.setSubmitButtonLabel('Custom Submit Label');
+        
         this.append(new Field())
             .setLabel('A field for a short answer')
             .setType('textinput')

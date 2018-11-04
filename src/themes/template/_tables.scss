@@ -16,7 +16,16 @@ $table-background-color: darken($form-background-color,2%);
       }
     }
   }
-  table.columnLayout {
 
+  /* Responsive Tables - if the screen size is too small to display the table without horizontal scrolling,
+   the table is automatically "stacked". To see the effect, reduce your browser window size. */
+  .gridLayout.stacked {
+
+  }
+  .matrixLayout.stacked {
+
+  }
+
+  table.columnLayout {
   }
 }

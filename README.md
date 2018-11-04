@@ -72,15 +72,14 @@ See [Documentation](./documentation/guidelines.md)
 
 #### Preview your Theme
 
-To preview your theme as you edit the scss files, open /preview/THEME_NAME.html in your browser. As long as the 
+To preview your theme as you edit the scss files, open /preview/[your theme].html in your browser. As long as the 
 `gulp watch` command is still running, you should be able to see your changes when refreshing the page.
 
 Any SCSS compilation error will be displayed in the terminal window where `gulp watch` is running.
 
 To preview your changes without reloading the page each time, you can install the 
 [LiveReload extension for Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en).
-Once installed, click the LiveReload icon in Chrome to enable the extension on your preview page and restart the 
-`gulp watch` command.
+Once installed, click the LiveReload icon in Chrome to enable the extension on your preview page. 
 
 #### Save your Progress
 
@@ -93,6 +92,10 @@ git add -A && git commit -m && git push
 
 Open a Pull Request on gitlab. https://help.github.com/articles/creating-a-pull-request/
 
+> If you are just creating a theme for your own FormAssembly instance, skip the pull request step. Instead, 
+go to the Theme Editor, click 'Create new theme' and paste the content of the`dist/themes-scss/[your theme].scss` 
+file in the Custom CSS field.  
+
 ## Create Additional Themes
 
 Run `gulp create` any time you want to work on a new theme. 
@@ -100,7 +103,7 @@ Run `gulp create` any time you want to work on a new theme.
 
 ## Update the Theme Dev Kit
 
-From time to time, FormAssembly may update the dev kit to account for new features and improvements to Themes. To bring 
+From time to time, FormAssembly may update the dev kit to account for new features and improvements. To bring 
 your local copy of the Theme Dev Kit up to date, stop your `gulp watch` command (if running) then run:
 ```text
 git merge master
