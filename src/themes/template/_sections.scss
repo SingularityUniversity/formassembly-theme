@@ -4,6 +4,11 @@
   fieldset {
   }
 
+  /* section (fieldset) intended to stand out (highlighted) */
+  .section.highlighted {
+    border-color: $color-accent-color;
+  }
+
   fieldset > fieldset:last-child {
     margin-bottom: 0;
   }

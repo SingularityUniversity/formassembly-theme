@@ -21,5 +21,10 @@ class PreviewForm extends TestForm {
             .setLabel(this.loremIpsum(6,8))
             .setType('textinput');
 
+        let section5 = this.append(new Section()).setType('fieldset').setLabel('Fieldset 4 Heading (Highlighted)');
+        section5.setStyle('highlighted');
+        section5.append(new Field())
+            .setLabel(this.loremIpsum(6,8))
+            .setType('textinput');
     }
 }
