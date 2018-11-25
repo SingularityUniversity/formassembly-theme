@@ -5,6 +5,7 @@ var livereload = require('gulp-livereload');
 var rename = require('gulp-rename');
 var tools = require('./scripts/gulp-tools');
 var prompts = require('prompts');
+const sass = require('gulp-sass');
 
 gulp.task('scss', function () {
     return tools.compile( gulp.src('./src/themes/**/*.scss') )
@@ -16,10 +17,12 @@ gulp.task('bundle', function() {
     /* Match each theme's main.scss file */
     return gulp.src('./src/themes/**/main.scss')
         .pipe(tools.bundle())
+        .pipe(tools.preserveSCSSVariables())
         .pipe(rename(function (destpath) {
             // use folder name in /src/themes as theme name.
             destpath.basename = destpath.dirname;
             destpath.dirname = '';
+            destpath.extname = '.scss';
         }))
         .pipe(gulp.dest('./dist/themes-scss'));
 });

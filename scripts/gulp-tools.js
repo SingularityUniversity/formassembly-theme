@@ -30,14 +30,13 @@ const FORM_SCRIPTS = ['test-field-types.js', 'test-fieldsets.js', 'test-label-al
                       'test-errors.js', 'test-text-formatting.js', 'test-rtl-language.js'];
 
 /**
- * Called from a gulp task (`gulp create`)
+ * Called from a gulp task (`gulp watch` or `gulp scss`)
  */
 function compile(stream){
     return stream.pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write())
         .pipe(rename(function (dpath) {
-            console.log(dpath);
             // use folder name in /src/themes as theme name.
             dpath.basename = dpath.dirname;
             dpath.dirname = '';
@@ -230,6 +229,71 @@ function createPreviewPage(themeName) {
         });
 }
 
+function preserveSCSSVariables() {
+    return through.obj(function(file, enc, cb) {
+        let variables = {};
+        let placeholders = {};
+        let counter = 1;
+        let scss = file.contents.toString('utf8');
+        // find variable definitions supported by theme editor. $color-, $font-, $length-, $image-
+        let regexes = [
+            new RegExp('(\\$color-[^\\s:;]*)\\s*:\\s*([^;]*);', 'g'),
+            new RegExp('(\\$font-[^\\s:;]*)\\s*:\\s*([^;]*);', 'g'),
+            new RegExp('(\\$length-[^\\s:;]*)\\s*:\\s*([^;]*);', 'g'),
+            new RegExp('(\\$image-[^\\s:;]*)\\s*:\\s*([^;]*);', 'g'),
+        ];
+        regexes.forEach( function(regex, index) {
+            scss = scss.replace(regex, function(match, variableName, variableValue) {
+                // save variable name and value.
+                let placeholder, strCounter;
+                variables[variableName] = variableValue;
+
+                if(counter < 10) {
+                    strCounter = "0" + counter;
+                } else {
+                    if(counter < 100) {
+                        strCounter = counter;
+                    } else {
+                        throw 'Too many variables (99 max)';
+                    }
+                }
+                // replace value with a unique placeholder.
+                switch(index) {
+                    case 0: /* color */
+                        placeholder = "#1234" + strCounter;
+                        break;
+                    case 1: /* font */
+                        placeholder = "placeholder"+strCounter+"";
+                        break;
+                    case 2: /* length */
+                        placeholder = "placeholder"+strCounter+"";
+                        break;
+                    case 3: /* image */
+                        placeholder = "placeholder"+strCounter+"";
+                        break;
+                }
+                counter++;
+                placeholders[variableName] = placeholder;
+                return variableName + ":" + placeholder +";";
+            });
+        });
+        let result = sass.compiler.renderSync( { 'data': scss });
+        let css = result.css.toString();
+        let vars = '';
+        // restore scss variables
+        for(let variableName in variables) {
+            let variableValue = variables[variableName];
+            let placeholder = placeholders[variableName];
+            css = css.replace( new RegExp( placeholder, 'g'), variableName);
+            vars += variableName + ": " + variableValue + ";\n";
+        }
+        // restore variable declarations;
+        file.contents = new Buffer(vars + css);
+        this.push(file);
+        cb();
+    });
+
+}
 /**
  * Called from a gulp task (`guld bundle`).
  * Consolidates .scss source files into a single .scss file.
@@ -268,5 +332,6 @@ module.exports = {
     'compile': compile,
     'create'  : create,
     'refresh' : refresh,
-    'bundle' : bundle
+    'bundle' : bundle,
+    'preserveSCSSVariables' : preserveSCSSVariables
 };
