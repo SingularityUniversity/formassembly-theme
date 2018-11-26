@@ -64,11 +64,8 @@ $input-text-color: darken($color-text-color,50%);
         border-color: $color-accent-color;
       }
       /* Placeholder Text */
-      ::-webkit-input-placeholder,  /* Chrome/Opera/Safari */
-      ::-moz-placeholder, /* Firefox 19+ */
-      :-ms-input-placeholder, /* IE 10+ */
-      :-moz-placeholder { /* Firefox 18- */
-        color: rgba($input-text-color,.1);
+      ::placeholder {
+        color: rgba(0,0,0,.25) !important;
       }
     }
   }

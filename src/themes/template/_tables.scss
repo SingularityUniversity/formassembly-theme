@@ -8,6 +8,9 @@ $table-background-color: darken($form-background-color,2%);
 
     }
     tbody {
+      th {
+        height: 2.5em;
+      }
       tr:nth-child(odd) {
         background-color: darken($table-background-color, 3%);
       }
@@ -27,5 +30,20 @@ $table-background-color: darken($form-background-color,2%);
   }
 
   table.columnLayout {
+  }
+}
+
+/* in form builder preview, tables have additional invisible rows */
+#preview .wFormContainer {
+  table.matrixLayout,
+  table.gridLayout  {
+    tbody {
+      tr:nth-child(n) {
+        background-color:transparent;
+      }
+      tr:nth-child(4n) {
+        background-color:rgba(0,0,0,.025);
+      }
+    }
   }
 }

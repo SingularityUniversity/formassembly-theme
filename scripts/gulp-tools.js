@@ -184,7 +184,8 @@ function generatePreviewHTML(formsHTML, themeName) {
     return `<!doctype html>
       <html>
         <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />            
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+            <meta name="viewport" content="width=device-width" />          
             <link rel='stylesheet' href="${WFORMS_CSS_URL}" type='text/css' />
             <link rel='stylesheet' href="${WFORMS_CSS_JSONLY_URL}" type='text/css' />
             <link rel='stylesheet' href="../dist/themes/${themeName}.css" type='text/css' />
