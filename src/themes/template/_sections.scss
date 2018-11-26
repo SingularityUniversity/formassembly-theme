@@ -1,10 +1,19 @@
 /* Section */
 .wFormContainer {
 
+  /* Fieldset section */
   fieldset {
   }
 
-  /* section (fieldset) intended to stand out (highlighted) */
+  /* Group section heading */
+  .section.group > .label {
+    padding: 0 0.25em 0 0;
+  }
+  .wForm[dir="rtl"] .section.group > .label {
+    padding: 0 0 0 0.25em;
+  }
+
+  /* section intended to stand out (highlighted) */
   .section.highlighted {
     border-color: $color-accent-color;
   }
