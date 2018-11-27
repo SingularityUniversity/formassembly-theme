@@ -13,17 +13,17 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-cli": "^2.0.1",
-    "gulp-livereload": "^4.0.0",
+    "gulp-livereload": "^4.0.1",
     "gulp-prompt": "^1.1.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
     "ncp": "^2.0.0",
-    "node-sass": "^4.9.4",
+    "node-sass": "^4.10.0",
     "pretty": "^2.0.0",
-    "prompts": "^1.1.1",
-    "puppeteer": "^1.9.0",
+    "prompts": "^1.2.1",
+    "puppeteer": "^1.10.0",
     "request-promise": "^4.2.2",
-    "through2": "^2.0.3"
+    "through2": "^2.0.5"
   }
 }
