@@ -33,8 +33,13 @@ const FORM_SCRIPTS = ['test-field-types.js', 'test-fieldsets.js', 'test-label-al
  * Called from a gulp task (`gulp watch` or `gulp scss`)
  */
 function compile(stream){
+    console.log('compile');
     return stream.pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({ outputStyle: 'compressed'})
+            .on('error', function(err) {
+                console.error('\x07');
+                sass.logError.bind(this)(err);
+            }))
         .pipe(sourcemaps.write())
         .pipe(rename(function (dpath) {
             // use folder name in /src/themes as theme name.
@@ -278,7 +283,12 @@ function preserveSCSSVariables() {
                 return variableName + ":" + placeholder +";";
             });
         });
-        let result = sass.compiler.renderSync( { 'data': scss });
+        let result;
+        try {
+            result = sass.compiler.renderSync({'data': scss})
+        } catch(err) {
+            return cb();
+        }
         let css = result.css.toString();
         let vars = '';
         // restore scss variables
