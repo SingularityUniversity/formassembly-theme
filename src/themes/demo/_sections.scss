@@ -2,6 +2,11 @@
 .wFormContainer {
 
   fieldset {
+    margin: 1em 0 0.5em 0;
+  }
+
+  .group > .label {
+    margin-top: 1em;
   }
 
   fieldset > fieldset:last-child {

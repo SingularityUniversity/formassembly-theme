@@ -1,0 +1,403 @@
+$color-accent-color: #2093c2;
+$color-inverse-accent-color: #FFF;
+$color-page-background: #2093c2;
+$color-text-color: #555;
+$color-error-color: #F00;
+$color-link-color: darken(#2093c2,20%);
+$font-font: 'Roboto Condensed';
+$length-scale-size: 95%;
+$length-logo-height: 2em;
+$length-logo-width: auto;
+$image-logo-image: '//pi.formassembly.com/l/77672/2016-09-27/45p3g1/77672/82588/formassembly_logo_white.png';
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+.wFormContainer {
+  font-family: $font-font, sans-serif;
+  font-size: $length-scale-size; }
+  .wFormContainer a {
+    text-decoration: none;
+    color: $color-link-color; }
+  .wFormContainer a:hover {
+    text-decoration: underline;
+    color: $color-link-color; }
+  .wFormContainer .htmlSection {
+    margin-top: 1em; }
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+  /* Container for title and form */ }
+  .wFormContainer .wForm {
+    background-color: #fff;
+    color: $color-text-color;
+    border: none;
+    border-radius: .2rem;
+    /* Form */ }
+    .wFormContainer .wForm form {
+      padding: 1rem 2rem; }
+
+/* Optional - Apply for FormAssembly hosted forms only. */
+.wFormWebPage {
+  background-color: $color-page-background; }
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+  /* Header and logo placeholder. */ }
+  .wFormContainer .wFormHeader {
+    box-sizing: content-box;
+    height: $length-logo-height;
+    padding: 1rem 0 2rem 0;
+    background: url($image-logo-image) no-repeat left center;
+    background-size: $length-logo-width $length-logo-height; }
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer .wForm {
+  display: flex;
+  /* prevents margin collapse on form title */
+  flex-direction: column;
+  /* Form Title */
+  /* Page Title */
+  /* Headings */ }
+  .wFormContainer .wForm .wFormTitle {
+    font-family: 'Roboto Slab';
+    margin: 1rem 2rem;
+    margin-top: 3rem;
+    font-size: 1.75em; }
+  .wFormContainer .wForm .section.pageSection > h4 {
+    font-size: 1.3em; }
+  .wFormContainer .wForm .htmlSection h4 {
+    font-size: 1.25em; }
+
+.wFormContainer {
+  /* Container for the navigation bar (listing page numbers) */
+  /* A page number in the navigation */
+  /* Page number for the current page */
+  /* Page number for a page that is disabled (conditional) */
+  /* Page number on mouse hover */
+  /* Separator between page numbers. */ }
+  .wFormContainer .wForm #wfTabNav {
+    padding: 1rem 2rem; }
+  .wFormContainer .wfTab {
+    margin: 0 .25em; }
+  .wFormContainer .wfTab.wfTabCurrentPage {
+    font-weight: bold; }
+  .wFormContainer .wfTab.wfHiddenTab, .wFormContainer .wfTab.wfHiddenTab:hover {
+    color: rgba(18, 52, 4, 0.3);
+    cursor: not-allowed; }
+
+/* Section */
+.wFormContainer fieldset {
+  margin: 1em 0 0.5em 0; }
+
+.wFormContainer .group > .label {
+  margin-top: 1em; }
+
+.wFormContainer fieldset > fieldset:last-child {
+  margin-bottom: 0; }
+
+.wFormContainer .pageSection > *:last-child {
+  margin-bottom: 0; }
+
+/* Tables */
+.wFormContainer table.matrixLayout tbody tr:nth-child(odd),
+.wFormContainer table.gridLayout tbody tr:nth-child(odd) {
+  background-color: #f2f2f2; }
+
+.wFormContainer table.matrixLayout tbody tr:nth-child(even),
+.wFormContainer table.gridLayout tbody tr:nth-child(even) {
+  background-color: #fafafa; }
+
+.wFormContainer {
+  /* Field Label */
+  /* Container for radio/checkbox and its label */
+  /* Required Mark */ }
+  .wFormContainer .label {
+    font-weight: 400; }
+  .wFormContainer .label.preField {
+    line-height: 1.5rem; }
+  .wFormContainer .oneChoice {
+    /* Radio & Checkbox Label */ }
+    .wFormContainer .oneChoice .label.postField {
+      vertical-align: middle !important; }
+  .wFormContainer .reqMark:after {
+    color: $color-error-color; }
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+  /* LTR support */ }
+  .wFormContainer .wForm {
+    /* container for the input(s) and decorators */ }
+    .wFormContainer .wForm .inputWrapper {
+      /* inputs */
+      /* Input with focus */
+      /* Placeholder Text */
+      /* Faux-checkbox / radios */ }
+      .wFormContainer .wForm .inputWrapper input[type='text'],
+      .wFormContainer .wForm .inputWrapper input[type='password'],
+      .wFormContainer .wForm .inputWrapper select,
+      .wFormContainer .wForm .inputWrapper textarea {
+        color: black;
+        border: 1px solid #bbb;
+        border-radius: 0.15em;
+        box-sizing: border-box;
+        font-size: 1em;
+        width: 20em;
+        background-color: #FFF; }
+      .wFormContainer .wForm .inputWrapper input[type='text'],
+      .wFormContainer .wForm .inputWrapper input[type='password'],
+      .wFormContainer .wForm .inputWrapper input[type='file'],
+      .wFormContainer .wForm .inputWrapper select:not([multiple]) {
+        height: 2.5em;
+        padding: 0 0.5em; }
+      .wFormContainer .wForm .inputWrapper select[multiple] {
+        width: auto; }
+      .wFormContainer .wForm .inputWrapper input[type='file'] {
+        border: none; }
+      .wFormContainer .wForm .inputWrapper textarea {
+        height: 5em;
+        padding: 0.5em; }
+      .wFormContainer .wForm .inputWrapper select option {
+        padding: 0.25em 0.5em; }
+      .wFormContainer .wForm .inputWrapper input.readonly, .wFormContainer .wForm .inputWrapper textarea.readonly {
+        border: 1px solid #bbb !important;
+        background-color: rgba(0, 0, 0, 0.05) !important; }
+      .wFormContainer .wForm .inputWrapper textarea:focus,
+      .wFormContainer .wForm .inputWrapper input[type='text']:focus,
+      .wFormContainer .wForm .inputWrapper input[type='password']:focus,
+      .wFormContainer .wForm .inputWrapper select:focus {
+        outline-style: none;
+        border-color: $color-accent-color; }
+      .wFormContainer .wForm .inputWrapper ::-webkit-input-placeholder,
+      .wFormContainer .wForm .inputWrapper ::-moz-placeholder,
+      .wFormContainer .wForm .inputWrapper :-ms-input-placeholder,
+      .wFormContainer .wForm .inputWrapper :-moz-placeholder {
+        /* Firefox 18- */
+        color: rgba(0, 0, 0, 0.1); }
+      .wFormContainer .wForm .inputWrapper .oneChoice .input-checkbox-faux:before {
+        content: '';
+        margin-right: .5em;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        vertical-align: top;
+        border-radius: 2px;
+        /* square shape */
+        text-align: center;
+        background-color: rgba(18, 52, 1, 0.25); }
+      .wFormContainer .wForm .inputWrapper .oneChoice .input-radio-faux:before {
+        content: '\f111';
+        font-family: 'fontawesome';
+        margin-right: .5em;
+        color: rgba(18, 52, 1, 0.25); }
+      .wFormContainer .wForm .inputWrapper input[type="radio"]:checked + .label > .input-radio-faux::before {
+        font-family: 'fontawesome';
+        content: "\f192";
+        font-weight: 900;
+        background-color: transparent;
+        color: $color-accent-color; }
+      .wFormContainer .wForm .inputWrapper input[type="checkbox"]:checked + .label > .input-checkbox-faux::before {
+        font-family: 'fontawesome';
+        content: "\f00c";
+        color: $color-accent-color; }
+      .wFormContainer .wForm .inputWrapper .oneChoice input[type="checkbox"],
+      .wFormContainer .wForm .inputWrapper .oneChoice input[type='radio'] {
+        width: 1px;
+        height: 1px;
+        border: 0;
+        clip: rect(0 0 0 0);
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute; }
+      .wFormContainer .wForm .inputWrapper .oneChoice .label {
+        margin-left: 0; }
+      .wFormContainer .wForm .inputWrapper .input-radio-faux:before,
+      .wFormContainer .wForm .inputWrapper .input-checkbox-faux:before {
+        transition: all 0.5s ease-out; }
+  .wFormContainer .wForm[dir='rtl'] .oneChoice .input-checkbox-faux:before,
+  .wFormContainer .wForm[dir='rtl'] .oneChoice .input-radio-faux:before {
+    margin-left: .5em !important;
+    margin-right: 0 !important; }
+
+/* Hints */
+.wFormContainer .field-hint-inactive,
+.wFormContainer .field-hint {
+  line-height: 100%;
+  font-size: 1em; }
+
+.wFormContainer .field-hint-inactive .hint {
+  font-size: 0.8em;
+  line-height: 1.75em;
+  transition: all 0.25s linear; }
+
+.wFormContainer .field-hint .hint {
+  font-size: 0.8em;
+  line-height: 1.75em;
+  transition: all 0.25s linear; }
+
+.wFormContainer .lengthIndicator {
+  font-size: 0.75em; }
+
+.wFormContainer {
+  /* The auto-completion suggestion.
+   * Shown underneath the text input.
+   * Must match exactly the position of user input
+   */
+  /* The spinner indicating the query is in progress.
+   * Positioned inside the text input.
+   */ }
+  .wFormContainer .wfAutosuggest.tt-hint {
+    margin-top: 0; }
+  .wFormContainer .tt-spinner {
+    top: 0.6rem;
+    right: 0.25rem; }
+
+/** Calendar - popup is inserted outside of the .wFormContainer **/
+html {
+  /* Calendar container */ }
+  html .kalendae {
+    background: #fff;
+    font-size: $length-scale-size;
+    font-family: $font-font;
+    border-radius: 0;
+    padding: 1rem;
+    /** Container for the 1-month view **/ }
+    html .kalendae .k-calendar {
+      /* ensures proper alignment of the 7 days */
+      width: 14em;
+      /* divisible by 7 */
+      /** Kalendae.Input's popup close button **/
+      /** Month Title Row **/
+      /** Month and Year Buttons **/
+      /** Days in the current month **/
+      /* Days outside of the current month */
+      /** Selected day, when inside the selectable area **/
+      /** Selectable day, hovered **/ }
+      html .kalendae .k-calendar .k-header span, html .kalendae .k-calendar .k-days span {
+        /* 1/7th of the width, minus margin. */
+        width: calc(2em - 2px) !important;
+        /* margin */
+        margin-left: 1px !important;
+        margin-right: 1px !important;
+        /* ensure any border or padding is accounted for. */
+        box-sizing: border-box !important; }
+      html .kalendae .k-calendar .k-title, html .kalendae .k-calendar .k-header, html .kalendae .k-calendar .k-days {
+        width: 100%;
+        height: auto;
+        margin: 0; }
+      html .kalendae .k-calendar .k-header span,
+      html .kalendae .k-calendar .k-days span {
+        height: inherit;
+        line-height: inherit;
+        text-align: right;
+        padding: 2px .25em 2px 2px; }
+      html .kalendae .k-calendar .k-btn-close:hover {
+        color: $color-accent-color;
+        border-color: $color-accent-color; }
+      html .kalendae .k-calendar .k-caption {
+        font-size: $length-scale-size;
+        color: $color-accent-color; }
+      html .kalendae .k-calendar .k-btn-previous-month,
+      html .kalendae .k-calendar .k-btn-next-month,
+      html .kalendae .k-calendar .k-btn-previous-year,
+      html .kalendae .k-calendar .k-btn-next-year {
+        color: $color-accent-color;
+        line-height: normal;
+        height: auto;
+        font-size: 1.4em; }
+      html .kalendae .k-calendar .k-btn-previous-month:hover,
+      html .kalendae .k-calendar .k-btn-next-month:hover,
+      html .kalendae .k-calendar .k-btn-previous-year:hover,
+      html .kalendae .k-calendar .k-btn-next-year:hover {
+        color: $color-accent-color; }
+      html .kalendae .k-calendar .k-header span {
+        color: $color-accent-color; }
+      html .kalendae .k-calendar .k-days span.k-in-month.k-active {
+        color: $color-text-color;
+        border-color: rgba(18, 52, 1, 0.1);
+        background-color: rgba(18, 52, 1, 0.08); }
+      html .kalendae .k-calendar .k-days span.k-out-of-month {
+        color: rgba(18, 52, 4, 0.3); }
+      html .kalendae .k-calendar .k-days span.k-selected.k-active {
+        background: $color-accent-color;
+        color: $color-inverse-accent-color; }
+      html .kalendae .k-calendar .k-days span.k-active:hover {
+        border-color: $color-accent-color; }
+
+.wFormContainer {
+  /* Indicator for an error on a field */ }
+  .wFormContainer .oneField.errFld {
+    /* Error message, below input */ }
+    .wFormContainer .oneField.errFld .inputWrapper {
+      /* Input with error */ }
+      .wFormContainer .oneField.errFld .inputWrapper input[type='text'],
+      .wFormContainer .oneField.errFld .inputWrapper input[type='password'],
+      .wFormContainer .oneField.errFld .inputWrapper textarea,
+      .wFormContainer .oneField.errFld .inputWrapper select {
+        border-color: $color-error-color; }
+    .wFormContainer .oneField.errFld div.errMsg {
+      color: $color-error-color; }
+
+.wFormContainer {
+  /* Container for the submit button */
+  /* Container for the page next/previous buttons */ }
+  .wFormContainer .actions {
+    margin-top: 0;
+    /* required to preserve alignment of previous/next and submit buttons. */
+    /* Submit button */
+    /* Hover state */
+    /* Disabled state (submission in progress) */ }
+    .wFormContainer .actions .primaryAction {
+      background-color: $color-accent-color;
+      color: $color-inverse-accent-color;
+      margin-top: 1.6em;
+      padding: 0.5em 1em;
+      border-radius: .25em;
+      border: none;
+      font-size: 1.2em;
+      font-weight: bold; }
+    .wFormContainer .actions .primaryAction:hover {
+      background-color: #236602; }
+    .wFormContainer .actions .primaryAction:disabled {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: rgba(255, 255, 255, 0.7); }
+  .wFormContainer .wfPagingButtons {
+    margin-top: 0;
+    /* Page next/previous buttons */
+    /* Hover state */ }
+    .wFormContainer .wfPagingButtons .wfPageNextButton, .wFormContainer .wfPagingButtons .wfPagePreviousButton {
+      background-color: $color-accent-color;
+      color: $color-inverse-accent-color;
+      margin-top: 1.6em;
+      padding: 0.5em 1em;
+      border-radius: .25em;
+      border: none;
+      font-size: 1.2em; }
+    .wFormContainer .wfPagingButtons .wfPageNextButton:hover, .wFormContainer .wfPagingButtons .wfPagePreviousButton:hover {
+      background-color: #236602; }
+
+/* Footer */
+.wFormContainer .wFormFooter {
+  /* Assistance link */ }
+  .wFormContainer .wFormFooter .supportInfo {
+    text-align: center; }
+    .wFormContainer .wFormFooter .supportInfo a {
+      color: $color-link-color; }
+    .wFormContainer .wFormFooter .supportInfo a:hover {
+      color: $color-link-color; }
+
+.wFormContainer .oneField, .wFormContainer .section {
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s; }
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
