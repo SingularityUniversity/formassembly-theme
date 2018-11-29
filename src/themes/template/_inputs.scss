@@ -1,5 +1,5 @@
 $input-padding: .5em;
-$input-backgroud-color: #FFF;
+$input-background-color: #FFF;
 $input-border: 1px solid #bbb;
 $input-border-radius: .15em;
 $input-height: 2.5em;
@@ -25,7 +25,8 @@ $input-text-color: darken($color-text-color,50%);
         box-sizing: border-box;
         font-size: 1em;
         width: $input-default-width;
-        background-color: $input-backgroud-color;
+        background-color: $input-background-color;
+
       }
 
       input[type='text'],
@@ -66,6 +67,11 @@ $input-text-color: darken($color-text-color,50%);
       /* Placeholder Text */
       ::placeholder {
         color: rgba(0,0,0,.25) !important;
+      }
+
+      /* autosuggest background color */
+      .twitter-typeahead {
+        background-color: $input-background-color;
       }
     }
   }

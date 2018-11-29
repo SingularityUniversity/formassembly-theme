@@ -24,3 +24,9 @@ $form-border: 1px solid #bbb;
 }
 
 
+@media only screen and (max-width: 600px) {
+  .wFormWebPage {
+    margin: 0 !important;
+  }
+}
+

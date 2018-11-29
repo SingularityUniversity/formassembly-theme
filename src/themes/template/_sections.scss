@@ -7,8 +7,9 @@
 
   /* Group section heading */
   .section.group > .label {
-    padding: 0 0.25em 0 0;
+    margin: 1.5em 0 .5em 0;
   }
+
   .wForm[dir="rtl"] .section.group > .label {
     padding: 0 0 0 0.25em;
   }

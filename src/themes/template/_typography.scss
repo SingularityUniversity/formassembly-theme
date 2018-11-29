@@ -8,11 +8,11 @@ $length-scale-size: 95%;
 
   a {
     text-decoration: none;
-    color: $color-link-color;
+    color: $color-link-color !important;
   }
   a:hover {
     text-decoration: underline;
-    color: $color-link-color ;
+    color: $color-link-color !important;
   }
   .htmlSection {
     margin-top: 1em;
