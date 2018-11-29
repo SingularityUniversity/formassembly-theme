@@ -33,7 +33,6 @@ const FORM_SCRIPTS = ['test-field-types.js', 'test-fieldsets.js', 'test-label-al
  * Called from a gulp task (`gulp watch` or `gulp scss`)
  */
 function compile(stream){
-    console.log('compile');
     return stream.pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed'})
             .on('error', function(err) {
@@ -339,10 +338,24 @@ function bundle() {
     });
 }
 
+function screenshot(previewFile) {
+    return through.obj(function(file, enc, cb) {
+        getBrowser().then(async (browser) => {
+            const page = await browser.newPage();
+            await page.setViewport({ width: 800, height: 800 });
+            await page.goto('file://'+ file.path);
+            let filename = path.parse(file.path).name + '.png';
+            page.screenshot({ path: 'dist/screenshots/' + filename, fullPage: true })
+        });
+        cb();
+    });
+}
+
 module.exports = {
     'compile': compile,
     'create'  : create,
     'refresh' : refresh,
     'bundle' : bundle,
-    'preserveSCSSVariables' : preserveSCSSVariables
+    'preserveSCSSVariables' : preserveSCSSVariables,
+    'screenshot' : screenshot
 };

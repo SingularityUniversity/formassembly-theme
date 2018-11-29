@@ -27,9 +27,14 @@ gulp.task('bundle', function() {
         .pipe(gulp.dest('./dist/themes-scss'));
 });
 
+gulp.task('screenshot', function() {
+    return gulp.src('./preview/*.html')
+        .pipe(tools.screenshot());
+});
+
 gulp.task('watch', function () {
     livereload.listen();
-    gulp.watch('./src/themes/**/*.scss', ['scss','bundle']);
+    gulp.watch('./src/themes/**/*.scss', ['scss','bundle','screenshot']);
 });
 
 /* */
@@ -49,4 +54,4 @@ gulp.task('refresh', function() {
     tools.refresh();
 });
 
-gulp.task('default',['scss','bundle']);
+gulp.task('default',['scss','bundle','screenshot']);
