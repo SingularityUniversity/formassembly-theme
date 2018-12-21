@@ -19,7 +19,8 @@
     }
     /* Hover state */
     .primaryAction:hover {
-      background-color: lighten($color-accent-color, 10%);
+      background-color: $color-inverse-accent-color;
+      color: $color-accent-color;
     }
     /* Disabled state (submission in progress) */
     .primaryAction:disabled {
@@ -39,7 +40,8 @@
 
     /* Hover state */
     .wfPageNextButton:hover, .wfPagePreviousButton:hover {
-      background-color: lighten($color-accent-color, 10%);
+      background-color: $color-inverse-accent-color;
+      color: $color-accent-color;
     }
   }
 }

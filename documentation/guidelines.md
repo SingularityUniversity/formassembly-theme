@@ -56,19 +56,16 @@ When making color a customization option, keep in mind how it may interact with 
 instance, if the background color of the form is customizable, you probably need the text color to be customizable as 
 well, otherwise users may not be able to keep the text legible with the background color of their choice.   
  
-You may find SaSS 
-[color functions](https://robots.thoughtbot.com/controlling-color-with-sass-color-functions) to be helpful 
- to generate color variations automatically. You can use `darken`, `lighten`, `adjust-hue`, `saturate`, `desaturate` and
- `rgba`.
-  
- As an example, to show Hint text in a more muted color, you can adjust its transparency with `rgba` (or use the 
- `lighten` function).
+ Example:
  
  ```css
+$color-background-color: #ffffff;
 $color-text-color: #3d3e44;
 
-.wFormContainer { color: $color-text-color; }
-.wFormContainer .hint { color: rgba($color-text-color, .7) }
+.wFormContainer { 
+  background-color: $color-background-color;
+  color: $color-text-color; 
+}
 ```
 
 ### Naming Customization Options
@@ -115,17 +112,15 @@ $length-scale-size: 1rem;
 }
 ```
 
-## Selectors
+## CSS Selectors
 1. **Use selectors provided by the template when possible.**
 2. **Use `.wFormContainer` to scope your css rules.**
 
 For convenience, the template provide CSS selectors for most form elements. 
 
-Note that the HTML markup of a form isn't exactly the same between the Form Builder preview and the live form. The 
-selectors provided by the template are guaranteed to work in both cases.
+For technical reasons, the markup for certain form elements (like labels) differs between the form preview, in the Form Builder, and the live form. To ensure that the theme renders properly, use the selectors provided by the template (e.g. use the `.label` class instead of the `label` tag)
 
-The `.wFormContainer` scope is indispensable to prevent theme styles from leaking into the Form Builder's user interface, 
-or the user's website (once the form is published). 
+Scoping css selectors with the  `.wFormContainer` class is indispensable to prevent theme styles from leaking into the Form Builder's user interface, and  the user's website (once the form is published). 
 
 ```css
 /* GOOD */
