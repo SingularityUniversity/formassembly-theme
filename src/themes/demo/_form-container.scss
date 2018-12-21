@@ -24,4 +24,19 @@ $form-border: none;
   background-color: $color-page-background;
 }
 
+@media only screen and (max-width: 600px) {
+  .wFormWebPage {
+    margin: 0 !important;
+
+    .wForm {
+      border-radius: 0;
+
+      form {
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
+
 

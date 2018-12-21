@@ -1,14 +1,10 @@
-$calendar-background-color: #fff;
-$calendar-text-color: $color-text-color;
-$calendar-accent-color: $color-accent-color;
-$calendar-inverse-accent-color: $color-inverse-accent-color;
 
 /** Calendar - popup is inserted outside of the .wFormContainer **/
 html {
 
   /* Calendar container */
   .kalendae {
-    background: $calendar-background-color;
+    background: $color-overlay-background-color;
     font-size: $length-scale-size;
     font-family: $font-font;
     border-radius: 0;
@@ -47,20 +43,20 @@ html {
 
       }
       .k-btn-close:hover {
-        color: $calendar-accent-color;
-        border-color: $calendar-accent-color;
+        color: $color-accent-color;
+        border-color: $color-accent-color;
       }
       /** Month Title Row **/
       .k-caption {
         font-size: $length-scale-size;
-        color: $calendar-accent-color;
+        color: $color-accent-color;
       }
       /** Month and Year Buttons **/
       .k-btn-previous-month,
       .k-btn-next-month,
       .k-btn-previous-year,
       .k-btn-next-year {
-        color: $calendar-accent-color;
+        color: $color-accent-color;
         line-height: normal;
         height: auto;
         font-size: 1.4em;
@@ -70,32 +66,32 @@ html {
       .k-btn-next-month:hover,
       .k-btn-previous-year:hover,
       .k-btn-next-year:hover {
-        color: $calendar-accent-color;
+        color: $color-accent-color;
       }
 
       .k-header span {
-        color: $calendar-accent-color;
+        color: $color-accent-color;
       }
 
       /** Days in the current month **/
       .k-days span.k-in-month.k-active {
-        color: $calendar-text-color;
-        border-color: rgba($calendar-accent-color,.1);
-        background-color: rgba($calendar-accent-color, .08);
+        color: $color-text-color;
+        border-color: rgba($color-accent-color,.1);
+        background-color: rgba($color-accent-color, .08);
       }
       /* Days outside of the current month */
       .k-days span.k-out-of-month {
-        color: rgba($calendar-text-color, .3);
+        color: rgba($color-text-color, .3);
       }
 
       /** Selected day, when inside the selectable area **/
       .k-days span.k-selected.k-active {
-        background: $calendar-accent-color;
-        color: $calendar-inverse-accent-color;
+        background: $color-accent-color;
+        color: $color-inverse-accent-color;
       }
       /** Selectable day, hovered **/
       .k-days span.k-active:hover {
-        border-color: $calendar-accent-color;
+        border-color: $color-accent-color;
       }
     }
   }

@@ -3,7 +3,8 @@ $color-inverse-accent-color: #FFF;
 $color-page-background: #2093c2;
 $color-text-color: #555;
 $color-error-color: #F00;
-$color-link-color: darken(#2093c2,20%);
+$color-link-color: #2281a9;
+$color-overlay-background-color: #FFF;
 $font-font: 'Roboto Condensed';
 $length-scale-size: 95%;
 $length-logo-height: 2em;
@@ -40,6 +41,14 @@ $image-logo-image: '//pi.formassembly.com/l/77672/2016-09-27/45p3g1/77672/82588/
 .wFormWebPage {
   background-color: $color-page-background; }
 
+@media only screen and (max-width: 600px) {
+  .wFormWebPage {
+    margin: 0 !important; }
+    .wFormWebPage .wForm {
+      border-radius: 0; }
+      .wFormWebPage .wForm form {
+        padding: 0 1rem; } }
+
 /* Main container. Must wrap *all* theme CSS */
 .wFormContainer {
   /* Header and logo placeholder. */ }
@@ -49,6 +58,10 @@ $image-logo-image: '//pi.formassembly.com/l/77672/2016-09-27/45p3g1/77672/82588/
     padding: 1rem 0 2rem 0;
     background: url($image-logo-image) no-repeat left center;
     background-size: $length-logo-width $length-logo-height; }
+
+@media only screen and (max-width: 600px) {
+  .wFormContainer .wFormHeader {
+    margin-left: 0.5em; } }
 
 /* Main container. Must wrap *all* theme CSS */
 .wFormContainer .wForm {
@@ -67,6 +80,10 @@ $image-logo-image: '//pi.formassembly.com/l/77672/2016-09-27/45p3g1/77672/82588/
     font-size: 1.3em; }
   .wFormContainer .wForm .htmlSection h4 {
     font-size: 1.25em; }
+
+@media only screen and (max-width: 600px) {
+  .wFormContainer .wForm .wFormTitle {
+    margin: 1rem; } }
 
 .wFormContainer {
   /* Container for the navigation bar (listing page numbers) */
@@ -256,7 +273,7 @@ $image-logo-image: '//pi.formassembly.com/l/77672/2016-09-27/45p3g1/77672/82588/
 html {
   /* Calendar container */ }
   html .kalendae {
-    background: #fff;
+    background: $color-overlay-background-color;
     font-size: $length-scale-size;
     font-family: $font-font;
     border-radius: 0;
@@ -336,6 +353,7 @@ html {
       .wFormContainer .oneField.errFld .inputWrapper select {
         border-color: $color-error-color; }
     .wFormContainer .oneField.errFld div.errMsg {
+      margin-top: 0.5em;
       color: $color-error-color; }
 
 .wFormContainer {
@@ -357,7 +375,8 @@ html {
       font-size: 1.2em;
       font-weight: bold; }
     .wFormContainer .actions .primaryAction:hover {
-      background-color: #236602; }
+      background-color: $color-inverse-accent-color;
+      color: $color-accent-color; }
     .wFormContainer .actions .primaryAction:disabled {
       background-color: rgba(0, 0, 0, 0.2);
       color: rgba(255, 255, 255, 0.7); }
@@ -374,7 +393,8 @@ html {
       border: none;
       font-size: 1.2em; }
     .wFormContainer .wfPagingButtons .wfPageNextButton:hover, .wFormContainer .wfPagingButtons .wfPagePreviousButton:hover {
-      background-color: #236602; }
+      background-color: $color-inverse-accent-color;
+      color: $color-accent-color; }
 
 /* Footer */
 .wFormContainer .wFormFooter {
