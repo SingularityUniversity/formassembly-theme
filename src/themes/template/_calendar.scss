@@ -76,12 +76,12 @@ html {
       /** Days in the current month **/
       .k-days span.k-in-month.k-active {
         color: $color-text-color;
-        border-color: rgba($color-accent-color,.1);
-        background-color: rgba($color-accent-color, .08);
+        border-color: rgba(0,0,0,.1);
+        background-color: rgba(0,0,0, .08);
       }
       /* Days outside of the current month */
       .k-days span.k-out-of-month {
-        color: rgba($color-text-color, .3);
+        color: rgba(0,0,0,.25);
       }
 
       /** Selected day, when inside the selectable area **/

@@ -4,12 +4,15 @@ $input-border: 1px solid #bbb;
 $input-border-radius: .15em;
 $input-height: 2.5em;
 $input-default-width: 20em;
-$input-text-color: darken($color-text-color,50%);
 
 /* Main container. Must wrap *all* theme CSS */
 .wFormContainer {
 
   .wForm {
+
+    .oneField {
+      padding:0;
+    }
 
     /* container for the input(s) and decorators */
     .inputWrapper {
@@ -19,14 +22,13 @@ $input-text-color: darken($color-text-color,50%);
       input[type='password'],
       select,
       textarea {
-        color: $input-text-color;
+        color: $color-text-color;
         border: $input-border;
         border-radius: $input-border-radius;
         box-sizing: border-box;
         font-size: 1em;
         width: $input-default-width;
         background-color: $input-background-color;
-
       }
 
       input[type='text'],
@@ -54,7 +56,7 @@ $input-text-color: darken($color-text-color,50%);
       }
       input.readonly, textarea.readonly {
         border: $input-border !important;
-        background-color: rgba($input-text-color,.05) !important;
+        background-color: rgba(0,0,0,.35) !important;
       }
       /* Input with focus */
       textarea:focus,

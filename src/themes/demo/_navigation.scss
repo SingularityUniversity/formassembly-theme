@@ -18,7 +18,7 @@
 
   /* Page number for a page that is disabled (conditional) */
   .wfTab.wfHiddenTab, .wfTab.wfHiddenTab:hover {
-    color: rgba($color-text-color,.3);
+    opacity: .5;
     cursor: not-allowed;
   }
 

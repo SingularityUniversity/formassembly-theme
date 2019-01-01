@@ -1,21 +1,32 @@
-$table-background-color: darken($form-background-color,2%);
+
 /* Tables */
 .wFormContainer {
 
   table.matrixLayout,
   table.gridLayout  {
     thead {
-
+      tr.headerRow {
+        background-color:rgba(0,0,0,.025);
+        th {
+          height: 2em;
+          padding: .25em;
+          vertical-align: bottom;
+        }
+      }
     }
     tbody {
-      th {
-        height: 2.5em;
+      tr th.headerCol {
+        height: 2em;
       }
       tr:nth-child(odd) {
-        background-color: darken($table-background-color, 3%);
+        background-color:transparent;
       }
       tr:nth-child(even) {
-        background-color: $table-background-color;
+        background-color:rgba(0,0,0,.025);
+      }
+      td {
+        height: 2em;
+        padding: .25em;
       }
     }
   }

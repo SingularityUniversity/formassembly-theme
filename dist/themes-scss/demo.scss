@@ -1,4 +1,5 @@
 $color-accent-color: #2093c2;
+$color-secondary-color: #2093c273;
 $color-inverse-accent-color: #FFF;
 $color-page-background: #2093c2;
 $color-text-color: #555;
@@ -99,7 +100,7 @@ $image-logo-image: '//pi.formassembly.com/l/77672/2016-09-27/45p3g1/77672/82588/
   .wFormContainer .wfTab.wfTabCurrentPage {
     font-weight: bold; }
   .wFormContainer .wfTab.wfHiddenTab, .wFormContainer .wfTab.wfHiddenTab:hover {
-    color: rgba(18, 52, 4, 0.3);
+    opacity: .5;
     cursor: not-allowed; }
 
 /* Section */
@@ -116,13 +117,39 @@ $image-logo-image: '//pi.formassembly.com/l/77672/2016-09-27/45p3g1/77672/82588/
   margin-bottom: 0; }
 
 /* Tables */
-.wFormContainer table.matrixLayout tbody tr:nth-child(odd),
-.wFormContainer table.gridLayout tbody tr:nth-child(odd) {
-  background-color: #f2f2f2; }
+.wFormContainer {
+  /* Responsive Tables - if the screen size is too small to display the table without horizontal scrolling,
+   the table is automatically "stacked". To see the effect, reduce your browser window size. */ }
+  .wFormContainer table.matrixLayout thead tr.headerRow,
+  .wFormContainer table.gridLayout thead tr.headerRow {
+    background-color: rgba(0, 0, 0, 0.025); }
+    .wFormContainer table.matrixLayout thead tr.headerRow th,
+    .wFormContainer table.gridLayout thead tr.headerRow th {
+      height: 2em;
+      padding: .25em;
+      vertical-align: bottom; }
+  .wFormContainer table.matrixLayout tbody tr th.headerCol,
+  .wFormContainer table.gridLayout tbody tr th.headerCol {
+    height: 2em; }
+  .wFormContainer table.matrixLayout tbody tr:nth-child(odd),
+  .wFormContainer table.gridLayout tbody tr:nth-child(odd) {
+    background-color: transparent; }
+  .wFormContainer table.matrixLayout tbody tr:nth-child(even),
+  .wFormContainer table.gridLayout tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.025); }
+  .wFormContainer table.matrixLayout tbody td,
+  .wFormContainer table.gridLayout tbody td {
+    height: 2em;
+    padding: .25em; }
 
-.wFormContainer table.matrixLayout tbody tr:nth-child(even),
-.wFormContainer table.gridLayout tbody tr:nth-child(even) {
-  background-color: #fafafa; }
+/* in form builder preview, tables have additional invisible rows */
+#preview .wFormContainer table.matrixLayout tbody tr:nth-child(n),
+#preview .wFormContainer table.gridLayout tbody tr:nth-child(n) {
+  background-color: transparent; }
+
+#preview .wFormContainer table.matrixLayout tbody tr:nth-child(4n),
+#preview .wFormContainer table.gridLayout tbody tr:nth-child(4n) {
+  background-color: rgba(0, 0, 0, 0.025); }
 
 .wFormContainer {
   /* Field Label */
@@ -153,7 +180,7 @@ $image-logo-image: '//pi.formassembly.com/l/77672/2016-09-27/45p3g1/77672/82588/
       .wFormContainer .wForm .inputWrapper input[type='password'],
       .wFormContainer .wForm .inputWrapper select,
       .wFormContainer .wForm .inputWrapper textarea {
-        color: black;
+        color: #000000;
         border: 1px solid #bbb;
         border-radius: 0.15em;
         box-sizing: border-box;
@@ -177,19 +204,15 @@ $image-logo-image: '//pi.formassembly.com/l/77672/2016-09-27/45p3g1/77672/82588/
         padding: 0.25em 0.5em; }
       .wFormContainer .wForm .inputWrapper input.readonly, .wFormContainer .wForm .inputWrapper textarea.readonly {
         border: 1px solid #bbb !important;
-        background-color: rgba(0, 0, 0, 0.05) !important; }
+        background-color: #bbbbbb !important; }
       .wFormContainer .wForm .inputWrapper textarea:focus,
       .wFormContainer .wForm .inputWrapper input[type='text']:focus,
       .wFormContainer .wForm .inputWrapper input[type='password']:focus,
       .wFormContainer .wForm .inputWrapper select:focus {
         outline-style: none;
         border-color: $color-accent-color; }
-      .wFormContainer .wForm .inputWrapper ::-webkit-input-placeholder,
-      .wFormContainer .wForm .inputWrapper ::-moz-placeholder,
-      .wFormContainer .wForm .inputWrapper :-ms-input-placeholder,
-      .wFormContainer .wForm .inputWrapper :-moz-placeholder {
-        /* Firefox 18- */
-        color: rgba(0, 0, 0, 0.1); }
+      .wFormContainer .wForm .inputWrapper ::placeholder {
+        color: rgba(0, 0, 0, 0.25) !important; }
       .wFormContainer .wForm .inputWrapper .oneChoice .input-checkbox-faux:before {
         content: '';
         margin-right: .5em;
@@ -200,12 +223,12 @@ $image-logo-image: '//pi.formassembly.com/l/77672/2016-09-27/45p3g1/77672/82588/
         border-radius: 2px;
         /* square shape */
         text-align: center;
-        background-color: rgba(18, 52, 1, 0.25); }
+        background-color: $color-secondary-color; }
       .wFormContainer .wForm .inputWrapper .oneChoice .input-radio-faux:before {
         content: '\f111';
         font-family: 'fontawesome';
         margin-right: .5em;
-        color: rgba(18, 52, 1, 0.25); }
+        color: $color-secondary-color; }
       .wFormContainer .wForm .inputWrapper input[type="radio"]:checked + .label > .input-radio-faux::before {
         font-family: 'fontawesome';
         content: "\f192";
@@ -331,10 +354,10 @@ html {
         color: $color-accent-color; }
       html .kalendae .k-calendar .k-days span.k-in-month.k-active {
         color: $color-text-color;
-        border-color: rgba(18, 52, 1, 0.1);
-        background-color: rgba(18, 52, 1, 0.08); }
+        border-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.08); }
       html .kalendae .k-calendar .k-days span.k-out-of-month {
-        color: rgba(18, 52, 4, 0.3); }
+        color: rgba(0, 0, 0, 0.25); }
       html .kalendae .k-calendar .k-days span.k-selected.k-active {
         background: $color-accent-color;
         color: $color-inverse-accent-color; }

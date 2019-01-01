@@ -4,8 +4,8 @@ $input-border: 1px solid #bbb;
 $input-border-radius: .15em;
 $input-height: 2.5em;
 $input-default-width: 20em;
-$input-text-color: darken($color-text-color,50%);
-$input-selected-color: $color-accent-color;
+$input-text-color: #000000;
+
 
 /* Main container. Must wrap *all* theme CSS */
 .wFormContainer {
@@ -54,7 +54,7 @@ $input-selected-color: $color-accent-color;
       }
       input.readonly, textarea.readonly {
         border: $input-border !important;
-        background-color: rgba($input-text-color,.05) !important;
+        background-color: #bbbbbb !important;
       }
       /* Input with focus */
       textarea:focus,
@@ -65,11 +65,8 @@ $input-selected-color: $color-accent-color;
         border-color: $color-accent-color;
       }
       /* Placeholder Text */
-      ::-webkit-input-placeholder,  /* Chrome/Opera/Safari */
-      ::-moz-placeholder, /* Firefox 19+ */
-      :-ms-input-placeholder, /* IE 10+ */
-      :-moz-placeholder { /* Firefox 18- */
-        color: rgba($input-text-color,.1);
+      ::placeholder {
+        color: rgba(0,0,0,.25) !important;
       }
 
       /* Faux-checkbox / radios */
@@ -84,14 +81,14 @@ $input-selected-color: $color-accent-color;
         vertical-align: top;
         border-radius: 2px; /* square shape */
         text-align: center;
-        background-color: rgba($input-selected-color,.25);
+        background-color: $color-secondary-color;
       }
 
       .oneChoice .input-radio-faux:before {
         content: '\f111';
         font-family:'fontawesome';
         margin-right: .5em;
-        color: rgba($input-selected-color,.25);
+        color: $color-secondary-color;
       }
 
        input[type="radio"]:checked+.label > .input-radio-faux::before {
@@ -99,12 +96,12 @@ $input-selected-color: $color-accent-color;
         content: "\f192";
         font-weight:900;
         background-color: transparent;
-        color: $input-selected-color;
+        color: $color-accent-color;
       }
        input[type="checkbox"]:checked+.label > .input-checkbox-faux::before {
         font-family:'fontawesome';
         content: "\f00c";
-        color: $input-selected-color;
+        color: $color-accent-color;
       }
 
       .oneChoice input[type="checkbox"],
