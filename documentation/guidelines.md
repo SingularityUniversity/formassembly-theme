@@ -82,8 +82,8 @@ customization variables according to the following table.
 | $color-accent-color | Accent color
 | $color-secondary-color | Secondary accent color
 | $color-error-color | Color for error text
-| $color-background-color | Background color  (applied on form)
-| $color-page-color | Background color  (applied on entire page)
+| $color-form-background | Background color  (applied on form)
+| $color-page-background | Background color  (applied on entire page)
 | $color-overlay-background-color | Background color for overlays (calendar, pop-up hints)
 | $image-logo-image | Logo image (file upload)
 | $length-logo-size | Logo size (in rem)
