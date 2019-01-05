@@ -26,8 +26,8 @@ const WFORMS_LOCALIZATION_JS_URL = 'https://app.formassembly.com/wForms/3.11/js/
 
 /* List of scripts in the /script folder used to generate the forms included in the Theme Preview page. */
 const FORM_SCRIPTS = ['test-field-types.js', 'test-fieldsets.js', 'test-label-alignment.js', 'test-multi-page.js',
-                      'test-conditionals.js', 'test-repeats.js', 'test-tables.js', 'test-field-decorators.js',
-                      'test-errors.js', 'test-text-formatting.js', 'test-rtl-language.js'];
+    'test-conditionals.js', 'test-repeats.js', 'test-tables.js', 'test-field-decorators.js',
+    'test-errors.js', 'test-text-formatting.js', 'test-rtl-language.js'];
 
 /**
  * Called from a gulp task (`gulp watch` or `gulp scss`)
@@ -227,7 +227,7 @@ function createPreviewPage(themeName) {
                                 return console.log(err);
                             }
                         });
-                });
+                    });
             } catch(e) {
                 console.log(e);
             }
@@ -345,7 +345,8 @@ function screenshot(previewFile) {
             await page.setViewport({ width: 800, height: 800 });
             await page.goto('file://'+ file.path);
             let filename = path.parse(file.path).name + '.png';
-            page.screenshot({ path: 'dist/screenshots/' + filename, fullPage: true })
+            await page.screenshot({ path: 'dist/screenshots/' + filename, fullPage: true });
+            await browser.close();
         });
         cb();
     });
