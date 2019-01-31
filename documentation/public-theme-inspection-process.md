@@ -1,4 +1,4 @@
-Public themes created for all FormAssembly customers will go through the following inspection process.
+Public themes created for all FormAssembly customers will go through the following inspection process before being approved for deployment.
 
 # A. Visual Theme Inspection
  
