@@ -2,6 +2,10 @@
 
 ## Getting Started
 
+### Intended Audience 
+
+This development kit is intended for designers with a strong understanding of SCSS, web design and source control with Git.
+
 ### Requirements
 Make sure you have both Git and Node installed.
 * Git ([setup instructions](https://www.atlassian.com/git/tutorials/install-git))
