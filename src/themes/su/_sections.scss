@@ -1,0 +1,28 @@
+/* Section */
+.wFormContainer {
+
+  /* Fieldset section */
+  fieldset {
+  }
+
+  /* Group section heading */
+  .section.group > .label {
+    margin: 1.5em 0 .5em 0;
+  }
+
+  .wForm[dir="rtl"] .section.group > .label {
+    padding: 0 0 0 0.25em;
+  }
+
+  /* section intended to stand out (highlighted) */
+  .section.highlighted {
+    border-color: $color-accent-color;
+  }
+
+  fieldset > fieldset:last-child {
+    margin-bottom: 0;
+  }
+  .pageSection > *:last-child {
+    margin-bottom: 0;
+  }
+}

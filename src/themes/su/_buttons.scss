@@ -1,0 +1,47 @@
+
+@mixin button ( $button-color ) {
+  background-color: $button-color;
+  border: 1px solid $button-color;
+  border-radius: 99999px;
+  color: white;
+  font-weight: 600;
+  margin-top: 1.6em;
+  padding: 8px 30px 9px;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  
+  &:hover {
+    background-color: transparent;
+    color: $button-color;
+  }
+}
+
+.wFormContainer {
+
+  /* Container for the submit button */
+  .actions {
+    margin-top:0; /* required to preserve alignment of previous/next and submit buttons. */
+
+    /* Submit button */
+    .primaryAction {
+      @include button($pink);
+    }
+    /* Disabled state (submission in progress) */
+    .primaryAction:disabled {
+      background-color: transparent;
+      color: $pink !important;
+      cursor: wait;
+      opacity: 0.5;
+    }
+  }
+
+  /* Container for the page next/previous buttons */
+  .wfPagingButtons {
+    margin-top: 0;
+
+    /* Page next/previous buttons */
+    .wfPageNextButton, .wfPagePreviousButton {
+      @include button($pink);
+    }
+  }
+}

@@ -1,0 +1,96 @@
+$input-padding-x: 15px;
+$input-padding-y: 3px;
+$input-background-color: #FFF;
+$input-border: 1px solid $blue;
+$input-border-radius: .15em;
+$input-height: 50px;
+$input-default-width: 20em;
+$input-line-height: 24px;
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+
+  .wForm {
+
+    .oneField {
+      padding:0;
+    }
+
+    /* container for the input(s) and decorators */
+    .inputWrapper {
+
+      /* inputs */
+      input[type='text'],
+      input[type='password'],
+      select,
+      textarea {
+        color: $color-text-color;
+        border: $input-border;
+        border-radius: $input-border-radius;
+        box-sizing: border-box;
+        font-size: 1em;
+        width: $input-default-width;
+        background-color: $input-background-color;
+        line-height: $input-line-height;
+      }
+
+      input[type='text'],
+      input[type='password'],
+      input[type='file'],
+      select:not([multiple]) {
+        height: $input-height;
+        padding: $input-padding-y $input-padding-x;
+      }
+      
+      input[type="file"] {
+        padding: 0;
+      }
+      
+      // Custom select styling (borrowed from Marketo)
+      select:not([multiple]) {
+        -moz-appearance: none;
+        text-indent: 0.01px;
+        text-overflow: "";
+        border-radius: 0;
+        background: #fff url("http://more.su.org/js/forms2/images/arrow-down-bk.png") center right no-repeat;
+      }
+      
+      select[multiple] {
+        width: auto;
+      }
+
+      input[type='file'] {
+        border: none;
+      }
+
+      textarea {
+        height: 5em;
+        padding: 12px $input-padding-x;
+      }
+      select option {
+        padding: 6px $input-padding-x;
+      }
+      input.readonly, textarea.readonly {
+        cursor: not-allowed;
+        border: 1px solid transparent;
+        background-color: transparentize( $black, 0.85 ) !important;
+      }
+      /* Input with focus */
+      textarea:focus,
+      input[type='text']:focus,
+      input[type='password']:focus,
+      select:focus {
+        outline-style: none;
+      }
+      /* Placeholder Text */
+      ::placeholder {
+        color: lighten( $color-text-color, 2% );
+      }
+
+      /* autosuggest background color */
+      .twitter-typeahead {
+        background-color: $input-background-color;
+      }
+    }
+  }
+}

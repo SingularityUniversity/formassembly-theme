@@ -1,0 +1,20 @@
+
+.wFormContainer {
+  /* Indicator for an error on a field */
+  .oneField.errFld {
+    .inputWrapper {
+      /* Input with error */
+      input[type='text'],
+      input[type='password'],
+      textarea,
+      select {
+        border-color: $color-error-color;
+      }
+    }
+    /* Error message, below input */
+    div.errMsg {
+      margin-top: 0.5em;
+      color: $color-error-color;
+    }
+  }
+}

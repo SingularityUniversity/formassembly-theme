@@ -1,0 +1,27 @@
+.wFormContainer {
+
+  .label {
+    font-weight: 400;
+  }
+  /* Field Label */
+  .label.preField {
+
+    line-height: 1.5rem;
+    padding-right: 0.4em;
+  }
+
+  /* Container for radio/checkbox and its label */
+  .oneChoice {
+
+    /* Radio & Checkbox Label */
+    .label.postField {
+      padding-left: 0.4em;
+      vertical-align: middle !important;
+    }
+  }
+
+  /* Required Mark */
+  .reqMark:after {
+    color: $color-error-color;
+  }
+}
