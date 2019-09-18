@@ -211,6 +211,9 @@ $image-logo-image: '//dummyimage.com/250x70/575757/fff.png&text=logo+placeholder
       color: #153d05; }
     .wFormContainer .wForm .inputWrapper .twitter-typeahead {
       background-color: #FFF; }
+    .wFormContainer .wForm .inputWrapper .choices .oneChoice input[type="radio"],
+    .wFormContainer .wForm .inputWrapper .choices .oneChoice input[type="checkbox"] {
+      vertical-align: middle; }
 
 /* Hints */
 .wFormContainer .field-hint-inactive,

@@ -91,6 +91,18 @@ $input-line-height: 24px;
       .twitter-typeahead {
         background-color: $input-background-color;
       }
+      
+      // Radio/checkbox styles
+      .choices {
+        
+        .oneChoice {
+          
+          input[type="radio"],
+          input[type="checkbox"] {
+            vertical-align: middle;
+          }
+        }
+      }
     }
   }
 }
