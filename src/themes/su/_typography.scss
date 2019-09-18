@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,600i,700,700i,800,800i&display=swap");
+$font-font: 'Montserrat';
+$length-scale-size: 95%;
+
+.wFormContainer {
+  font-family: $font-font, sans-serif;
+  font-size: $length-scale-size;
+
+  a {
+    text-decoration: none;
+    color: $color-link-color !important;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: $color-link-color !important;
+  }
+  .htmlSection {
+    margin-top: 1em;
+    
+    // Remove .htmlSection default padding for consistency with .oneField
+    padding: 0;
+    border: 2px solid transparent;
+  }
+}
+

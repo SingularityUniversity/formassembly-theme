@@ -1,0 +1,25 @@
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+
+  .wForm {
+    display: flex; /* prevents margin collapse on form title */
+    flex-direction: column;
+
+    /* Form Title */
+    .wFormTitle {
+      margin: $form-padding;
+      margin-top: 3em;
+    }
+
+    /* Page Title */
+    .section.pageSection > h4 {
+
+    }
+
+    /* Headings */
+    .htmlSection h4 {
+
+    }
+  }
+}

@@ -1,0 +1,391 @@
+$color-accent-color: $darkblue;
+$color-inverse-accent-color: $gray3;
+$color-page-background: #FFF;
+$color-text-color: $text-color;
+$color-error-color: $pink;
+$color-link-color: $blue;
+$color-overlay-background-color: #FFF;
+$font-font: 'Montserrat';
+$length-scale-size: 95%;
+$length-logo-height: 70px;
+$length-logo-width: auto;
+$image-logo-image: 'https://su.org/wp-content/themes/su/img/su-logos/su-logo-black.svg';
+/* SU.ORG COLORS *************************************************************/
+/* FORMASSEMBLY COLORS (DO NOT RENAME THESE) *********************************/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,600i,700,700i,800,800i&display=swap");
+.wFormContainer {
+  font-family: $font-font, sans-serif;
+  font-size: $length-scale-size; }
+  .wFormContainer a {
+    text-decoration: none;
+    color: $color-link-color !important; }
+  .wFormContainer a:hover {
+    text-decoration: underline;
+    color: $color-link-color !important; }
+  .wFormContainer .htmlSection {
+    margin-top: 1em;
+    padding: 0;
+    border: 2px solid transparent; }
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+  /* Container for title and form */ }
+  .wFormContainer .wForm {
+    background-color: transparent;
+    color: $color-text-color;
+    border: 1px solid #bbb;
+    /* Form */ }
+    .wFormContainer .wForm form {
+      padding: 1rem 2rem; }
+
+/* Optional - Apply for FormAssembly hosted forms only. */
+.wFormWebPage {
+  background-color: $color-page-background; }
+
+@media only screen and (max-width: 600px) {
+  .wFormWebPage {
+    margin: 0 !important; } }
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+  /* Header and logo placeholder. */ }
+  .wFormContainer .wFormHeader {
+    box-sizing: content-box;
+    height: $length-logo-height;
+    padding: 1rem 0 2rem 0;
+    background: url($image-logo-image) no-repeat left center;
+    background-size: $length-logo-width $length-logo-height; }
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer .wForm {
+  display: flex;
+  /* prevents margin collapse on form title */
+  flex-direction: column;
+  /* Form Title */
+  /* Page Title */
+  /* Headings */ }
+  .wFormContainer .wForm .wFormTitle {
+    margin: 1rem 2rem;
+    margin-top: 3em; }
+
+.wFormContainer {
+  /* Container for the navigation bar (listing page numbers) */
+  /* A page number in the navigation */
+  /* Page number for the current page */
+  /* Page number for a page that is disabled (conditional) */
+  /* Page number on mouse hover */
+  /* Separator between page numbers. */ }
+  .wFormContainer .wForm #wfTabNav {
+    padding: 1rem 2rem; }
+  .wFormContainer .wfTab {
+    margin: 0 .25em; }
+  .wFormContainer .wfTab.wfTabCurrentPage {
+    font-weight: bold; }
+  .wFormContainer .wfTab.wfHiddenTab, .wFormContainer .wfTab.wfHiddenTab:hover {
+    opacity: .5;
+    cursor: not-allowed; }
+
+/* Section */
+.wFormContainer {
+  /* Fieldset section */
+  /* Group section heading */
+  /* section intended to stand out (highlighted) */ }
+  .wFormContainer .section.group > .label {
+    margin: 1.5em 0 .5em 0; }
+  .wFormContainer .wForm[dir="rtl"] .section.group > .label {
+    padding: 0 0 0 0.25em; }
+  .wFormContainer .section.highlighted {
+    border-color: $color-accent-color; }
+  .wFormContainer fieldset > fieldset:last-child {
+    margin-bottom: 0; }
+  .wFormContainer .pageSection > *:last-child {
+    margin-bottom: 0; }
+
+/* Tables */
+.wFormContainer {
+  /* Responsive Tables - if the screen size is too small to display the table without horizontal scrolling,
+   the table is automatically "stacked". To see the effect, reduce your browser window size. */ }
+  .wFormContainer table.matrixLayout thead tr.headerRow,
+  .wFormContainer table.gridLayout thead tr.headerRow {
+    background-color: rgba(0, 0, 0, 0.025); }
+    .wFormContainer table.matrixLayout thead tr.headerRow th,
+    .wFormContainer table.gridLayout thead tr.headerRow th {
+      height: 2em;
+      padding: .25em;
+      vertical-align: bottom; }
+  .wFormContainer table.matrixLayout tbody tr th.headerCol,
+  .wFormContainer table.gridLayout tbody tr th.headerCol {
+    height: 2em; }
+  .wFormContainer table.matrixLayout tbody tr:nth-child(odd),
+  .wFormContainer table.gridLayout tbody tr:nth-child(odd) {
+    background-color: transparent; }
+  .wFormContainer table.matrixLayout tbody tr:nth-child(even),
+  .wFormContainer table.gridLayout tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.025); }
+  .wFormContainer table.matrixLayout tbody td,
+  .wFormContainer table.gridLayout tbody td {
+    height: 2em;
+    padding: .25em; }
+
+/* in form builder preview, tables have additional invisible rows */
+#preview .wFormContainer table.matrixLayout tbody tr:nth-child(n),
+#preview .wFormContainer table.gridLayout tbody tr:nth-child(n) {
+  background-color: transparent; }
+
+#preview .wFormContainer table.matrixLayout tbody tr:nth-child(4n),
+#preview .wFormContainer table.gridLayout tbody tr:nth-child(4n) {
+  background-color: rgba(0, 0, 0, 0.025); }
+
+.wFormContainer {
+  /* Field Label */
+  /* Container for radio/checkbox and its label */
+  /* Required Mark */ }
+  .wFormContainer .label {
+    font-weight: 400; }
+  .wFormContainer .label.preField {
+    line-height: 1.5rem;
+    padding-right: 0.4em; }
+  .wFormContainer .oneChoice {
+    /* Radio & Checkbox Label */ }
+    .wFormContainer .oneChoice .label.postField {
+      padding-left: 0.4em;
+      vertical-align: middle !important; }
+  .wFormContainer .reqMark:after {
+    color: $color-error-color; }
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer .wForm {
+  /* container for the input(s) and decorators */ }
+  .wFormContainer .wForm .oneField {
+    padding: 0; }
+  .wFormContainer .wForm .inputWrapper {
+    /* inputs */
+    /* Input with focus */
+    /* Placeholder Text */
+    /* autosuggest background color */ }
+    .wFormContainer .wForm .inputWrapper input[type='text'],
+    .wFormContainer .wForm .inputWrapper input[type='password'],
+    .wFormContainer .wForm .inputWrapper select,
+    .wFormContainer .wForm .inputWrapper textarea {
+      color: $color-text-color;
+      border: 1px solid #2467B0;
+      border-radius: 0.15em;
+      box-sizing: border-box;
+      font-size: 1em;
+      width: 20em;
+      background-color: #FFF;
+      line-height: 24px; }
+    .wFormContainer .wForm .inputWrapper input[type='text'],
+    .wFormContainer .wForm .inputWrapper input[type='password'],
+    .wFormContainer .wForm .inputWrapper input[type='file'],
+    .wFormContainer .wForm .inputWrapper select:not([multiple]) {
+      height: 50px;
+      padding: 3px 15px; }
+    .wFormContainer .wForm .inputWrapper input[type="file"] {
+      padding: 0; }
+    .wFormContainer .wForm .inputWrapper select:not([multiple]) {
+      -moz-appearance: none;
+      text-indent: 0.01px;
+      text-overflow: "";
+      border-radius: 0;
+      background: #fff url("http://more.su.org/js/forms2/images/arrow-down-bk.png") center right no-repeat; }
+    .wFormContainer .wForm .inputWrapper select[multiple] {
+      width: auto; }
+    .wFormContainer .wForm .inputWrapper input[type='file'] {
+      border: none; }
+    .wFormContainer .wForm .inputWrapper textarea {
+      height: 5em;
+      padding: 12px 15px; }
+    .wFormContainer .wForm .inputWrapper select option {
+      padding: 6px 15px; }
+    .wFormContainer .wForm .inputWrapper input.readonly, .wFormContainer .wForm .inputWrapper textarea.readonly {
+      cursor: not-allowed;
+      border: 1px solid transparent;
+      background-color: rgba(0, 0, 0, 0.15) !important; }
+    .wFormContainer .wForm .inputWrapper textarea:focus,
+    .wFormContainer .wForm .inputWrapper input[type='text']:focus,
+    .wFormContainer .wForm .inputWrapper input[type='password']:focus,
+    .wFormContainer .wForm .inputWrapper select:focus {
+      outline-style: none; }
+    .wFormContainer .wForm .inputWrapper ::placeholder {
+      color: #153d05; }
+    .wFormContainer .wForm .inputWrapper .twitter-typeahead {
+      background-color: #FFF; }
+    .wFormContainer .wForm .inputWrapper .choices .oneChoice input[type="radio"],
+    .wFormContainer .wForm .inputWrapper .choices .oneChoice input[type="checkbox"] {
+      vertical-align: middle; }
+
+/* Hints */
+.wFormContainer .field-hint-inactive,
+.wFormContainer .field-hint {
+  line-height: 100%;
+  font-size: 1em; }
+
+.wFormContainer .field-hint-inactive .hint {
+  font-size: 0.75em;
+  line-height: 1.75em;
+  transition: all 0.25s linear; }
+
+.wFormContainer .field-hint .hint {
+  font-size: 0.75em;
+  line-height: 1.75em;
+  transition: all 0.25s linear; }
+
+.wFormContainer .lengthIndicator {
+  font-size: 0.75em; }
+
+.wFormContainer {
+  /* The auto-completion suggestion.
+   * Shown underneath the text input.
+   * Must match exactly the position of user input
+   */
+  /* The spinner indicating the query is in progress.
+   * Positioned inside the text input.
+   */ }
+  .wFormContainer .wfAutosuggest.tt-hint {
+    margin-top: 0; }
+  .wFormContainer .tt-spinner {
+    top: 0.6rem;
+    right: 0.25rem; }
+
+/** Calendar - popup is inserted outside of the .wFormContainer **/
+html {
+  /* Calendar container */ }
+  html .kalendae {
+    background: $color-overlay-background-color;
+    font-size: $length-scale-size;
+    font-family: $font-font;
+    border-radius: 0;
+    padding: 1rem;
+    border: 1px solid #2467B0;
+    border-radius: 0.15em;
+    /** Container for the 1-month view **/ }
+    html .kalendae .k-calendar {
+      /* ensures proper alignment of the 7 days */
+      width: 14em;
+      /* divisible by 7 */
+      /** Kalendae.Input's popup close button **/
+      /** Month Title Row **/
+      /** Month and Year Buttons **/
+      /** Days in the current month **/
+      /* Days outside of the current month */
+      /** Selected day, when inside the selectable area **/
+      /** Selectable day, hovered **/ }
+      html .kalendae .k-calendar .k-header span, html .kalendae .k-calendar .k-days span {
+        /* 1/7th of the width, minus margin. */
+        width: calc(2em - 2px) !important;
+        /* margin */
+        margin-left: 1px !important;
+        margin-right: 1px !important;
+        /* ensure any border or padding is accounted for. */
+        box-sizing: border-box !important; }
+      html .kalendae .k-calendar .k-title, html .kalendae .k-calendar .k-header, html .kalendae .k-calendar .k-days {
+        width: 100%;
+        height: auto;
+        margin: 0; }
+      html .kalendae .k-calendar .k-header span,
+      html .kalendae .k-calendar .k-days span {
+        height: inherit;
+        line-height: inherit;
+        text-align: right;
+        padding: 2px .25em 2px 2px; }
+      html .kalendae .k-calendar .k-btn-close:hover {
+        color: $color-accent-color;
+        border-color: $color-accent-color; }
+      html .kalendae .k-calendar .k-caption {
+        font-size: $length-scale-size;
+        color: $color-accent-color; }
+      html .kalendae .k-calendar .k-btn-previous-month,
+      html .kalendae .k-calendar .k-btn-next-month,
+      html .kalendae .k-calendar .k-btn-previous-year,
+      html .kalendae .k-calendar .k-btn-next-year {
+        color: $color-accent-color;
+        line-height: normal;
+        height: auto;
+        font-size: 1.4em; }
+      html .kalendae .k-calendar .k-btn-previous-month:hover,
+      html .kalendae .k-calendar .k-btn-next-month:hover,
+      html .kalendae .k-calendar .k-btn-previous-year:hover,
+      html .kalendae .k-calendar .k-btn-next-year:hover {
+        color: $color-accent-color; }
+      html .kalendae .k-calendar .k-header span {
+        color: $color-accent-color; }
+      html .kalendae .k-calendar .k-days span.k-in-month.k-active {
+        color: $color-text-color;
+        border-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.08); }
+      html .kalendae .k-calendar .k-days span.k-out-of-month {
+        color: rgba(0, 0, 0, 0.25); }
+      html .kalendae .k-calendar .k-days span.k-selected.k-active {
+        background: $color-accent-color;
+        color: $color-inverse-accent-color; }
+      html .kalendae .k-calendar .k-days span.k-active:hover {
+        border-color: $color-accent-color; }
+
+.wFormContainer {
+  /* Indicator for an error on a field */ }
+  .wFormContainer .oneField.errFld {
+    /* Error message, below input */ }
+    .wFormContainer .oneField.errFld .inputWrapper {
+      /* Input with error */ }
+      .wFormContainer .oneField.errFld .inputWrapper input[type='text'],
+      .wFormContainer .oneField.errFld .inputWrapper input[type='password'],
+      .wFormContainer .oneField.errFld .inputWrapper textarea,
+      .wFormContainer .oneField.errFld .inputWrapper select {
+        border-color: $color-error-color; }
+    .wFormContainer .oneField.errFld div.errMsg {
+      margin-top: 0.5em;
+      color: $color-error-color; }
+
+.wFormContainer {
+  /* Container for the submit button */
+  /* Container for the page next/previous buttons */ }
+  .wFormContainer .actions {
+    margin-top: 0;
+    /* required to preserve alignment of previous/next and submit buttons. */
+    /* Submit button */
+    /* Disabled state (submission in progress) */ }
+    .wFormContainer .actions .primaryAction {
+      background-color: #E4168D;
+      border: 1px solid #E4168D;
+      border-radius: 99999px;
+      color: white;
+      font-weight: 600;
+      margin-top: 1.6em;
+      padding: 8px 30px 9px;
+      transition: all 0.5s ease;
+      -webkit-appearance: none; }
+      .wFormContainer .actions .primaryAction:hover {
+        background-color: transparent;
+        color: #E4168D; }
+    .wFormContainer .actions .primaryAction:disabled {
+      background-color: transparent;
+      color: #E4168D !important;
+      cursor: wait;
+      opacity: 0.5; }
+  .wFormContainer .wfPagingButtons {
+    margin-top: 0;
+    /* Page next/previous buttons */ }
+    .wFormContainer .wfPagingButtons .wfPageNextButton, .wFormContainer .wfPagingButtons .wfPagePreviousButton {
+      background-color: #E4168D;
+      border: 1px solid #E4168D;
+      border-radius: 99999px;
+      color: white;
+      font-weight: 600;
+      margin-top: 1.6em;
+      padding: 8px 30px 9px;
+      transition: all 0.5s ease;
+      -webkit-appearance: none; }
+      .wFormContainer .wfPagingButtons .wfPageNextButton:hover, .wFormContainer .wfPagingButtons .wfPagePreviousButton:hover {
+        background-color: transparent;
+        color: #E4168D; }
+
+/* Footer */
+.wFormContainer .wFormFooter {
+  /* Assistance link */ }
+  .wFormContainer .wFormFooter .supportInfo {
+    text-align: center; }
+    .wFormContainer .wFormFooter .supportInfo a {
+      color: $color-link-color; }
+    .wFormContainer .wFormFooter .supportInfo a:hover {
+      color: $color-link-color; }

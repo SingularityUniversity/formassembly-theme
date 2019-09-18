@@ -1,0 +1,60 @@
+
+/* Tables */
+.wFormContainer {
+
+  table.matrixLayout,
+  table.gridLayout  {
+    thead {
+      tr.headerRow {
+        background-color:rgba(0,0,0,.025);
+        th {
+          height: 2em;
+          padding: .25em;
+          vertical-align: bottom;
+        }
+      }
+    }
+    tbody {
+      tr th.headerCol {
+        height: 2em;
+      }
+      tr:nth-child(odd) {
+        background-color:transparent;
+      }
+      tr:nth-child(even) {
+        background-color:rgba(0,0,0,.025);
+      }
+      td {
+        height: 2em;
+        padding: .25em;
+      }
+    }
+  }
+
+  /* Responsive Tables - if the screen size is too small to display the table without horizontal scrolling,
+   the table is automatically "stacked". To see the effect, reduce your browser window size. */
+  .gridLayout.stacked {
+
+  }
+  .matrixLayout.stacked {
+
+  }
+
+  table.columnLayout {
+  }
+}
+
+/* in form builder preview, tables have additional invisible rows */
+#preview .wFormContainer {
+  table.matrixLayout,
+  table.gridLayout  {
+    tbody {
+      tr:nth-child(n) {
+        background-color:transparent;
+      }
+      tr:nth-child(4n) {
+        background-color:rgba(0,0,0,.025);
+      }
+    }
+  }
+}

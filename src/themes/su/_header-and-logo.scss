@@ -1,0 +1,17 @@
+$image-logo-image: 'https://su.org/wp-content/themes/su/img/su-logos/su-logo-black.svg';
+$length-logo-height: 70px;
+$length-logo-width: auto;
+
+/* Main container. Must wrap *all* theme CSS */
+.wFormContainer {
+
+  /* Header and logo placeholder. */
+  .wFormHeader {
+    box-sizing: content-box;
+    height: $length-logo-height;
+    padding: 1rem 0 2rem 0;
+    background: url($image-logo-image) no-repeat left center;
+    background-size: $length-logo-width $length-logo-height;
+  }
+
+}
